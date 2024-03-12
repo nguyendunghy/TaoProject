@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.example.utils.Constants.SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class GetPriceEngine {
-    private static String SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID = "@BittensorSubnetRegisterPrice";
 
     private static Double REGISTER_PRICE_THRESHOLD = 10D;
 
@@ -32,9 +33,9 @@ public class GetPriceEngine {
 
     public static void main(String[] args) {
         List<String> listSubnetId = Arrays.asList(
-                "32",
-                "26",
-                "1"
+//                "32",
+//                "1",
+                "26"
         );
         startRunningGetPrice(listSubnetId);
 

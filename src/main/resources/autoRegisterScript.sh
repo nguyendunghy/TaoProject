@@ -3,7 +3,6 @@
 set password "Iltmt@e1"
 set timeout 60
 set REGISTER_PRICE_THRESHOLD [lindex $argv 1]
-set pattern {[-+]?[0-9]*\.?[0-9]+}
 
 
 cd ~/.bittensor/wallets/default
@@ -36,9 +35,16 @@ expect {
 }
 
 expect {
-    "Recycle*" {
-        send "y\r"
+    -re {Recycle τ([0-9.]+) to register on subnet:([0-9]+)\?} {
+            set amount $expect_out(1,string)
+            set amountFloat [expr {double($amount)}]
+            if {$amountFloat > $REGISTER_PRICE_THRESHOLD} {
+                send "n\r"
+            } else {
+                send "y\r"
+            }
     }
+
      timeout {
         send_user "Expected recycle not found within timeout period.\n"
         exit 1  

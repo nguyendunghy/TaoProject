@@ -1,15 +1,15 @@
 package org.example.engine;
 
+import org.example.telegram.TeleGramMessageSender;
 import org.example.utils.Constants;
-import org.example.script.RunShellScript;
-import org.example.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.example.utils.Constants.MAX_REGISTER_PRICE_MAP;
 import static org.example.script.RunShellScript.register;
+import static org.example.utils.Constants.MAX_REGISTER_PRICE_MAP;
+import static org.example.utils.Constants.SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID;
 
 public class AutoRegisterEngine {
     private int counter = 0;
@@ -44,14 +44,11 @@ public class AutoRegisterEngine {
     public void run() {
         while (true) {
             try {
-                String scriptOutput = RunShellScript.run(Constants.GET_REGISTER_PRICE_SCRIPT_PATH, subnetId);
-                Double currentPrice = Double.parseDouble(StringUtils.extractPrice(scriptOutput));
-                if (currentPrice.compareTo(MAX_REGISTER_PRICE_MAP.get(subnetId)) < 0) {
-                    String hotkey = genPublicKey();
-                    String output = register(Constants.REGISTER_SUBNET_SCRIPT_PATH, subnetId, hotkey);
-                    System.out.println(output);
-                } else {
-                    System.out.println("Price register subnet " + subnetId + " is too expensive: " + currentPrice);
+                String hotkey = genPublicKey();
+                String output = register(Constants.REGISTER_SUBNET_SCRIPT_PATH, subnetId, MAX_REGISTER_PRICE_MAP.get(subnetId).toString(),hotkey);
+                System.out.println(output);
+                if(output.contains("Registered") && !output.contains("Already Registered")){
+                    TeleGramMessageSender.sendMessage(SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID, "Registered successfully subnet:" + subnetId);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -60,7 +57,7 @@ public class AutoRegisterEngine {
     }
 
     private String genPublicKey() {
-        return "jackie_hotkey_22";
+        return "jackie_hotkey_23";
     }
 
 

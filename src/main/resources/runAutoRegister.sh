@@ -2,5 +2,6 @@
 
 cd /Users/nannan/IdeaProjects/TaoProject/src/main/resources
 subnetId=$1
-hotkey=$2
-./autoRegisterScript.sh $subnetId 0.01 default $hotkey
+threshold=$2
+hotkey=$3
+./autoRegisterScript.sh $subnetId $threshold default $hotkey
