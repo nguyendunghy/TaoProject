@@ -1,5 +1,7 @@
 package org.example.script;
 
+import org.example.utils.PropertyUtils;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -8,7 +10,8 @@ public class RunShellScript {
     public static String getPriceLinuxCommand(String scriptPath, String subnetId, String hotkey) {
         try {
             // Create process builder
-            ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, hotkey);
+            String runScriptPath = folderOfScript();
+            ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, hotkey, runScriptPath);
             // Redirect error stream to output stream
             processBuilder.redirectErrorStream(true);
 
@@ -32,6 +35,12 @@ public class RunShellScript {
             e.printStackTrace();
         }
         return "";
+    }
+
+    private static String folderOfScript(){
+        String path = PropertyUtils.getProperty("script.get.register.price.path");
+        int index = path.lastIndexOf("/");
+        return path.substring(0,index);
     }
 
 
