@@ -6,22 +6,34 @@ import java.time.format.DateTimeFormatter;
 public class StringUtils {
     private static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
 
-    public static String extractPrice(String input){
+    public static String extractPrice(String input) {
+
         String[] strArray = input.split("\n");
         String price;
 
+        if (input.contains("Insufficient balance")) {
+            try {
+                price = strArray[strArray.length - 1].split("τ")[2].split(" ")[0].trim();
+                return price;
+            } catch (Exception ex) {
+                System.out.println("input: " + input);
+                System.out.println(ex.getMessage());
+            }
+        }
 
         try {
             price = strArray[7].split("τ")[1].split(" ")[0].trim();
             return price;
         } catch (Exception ex) {
+            System.out.println("input: " + input);
             System.out.println(ex.getMessage());
         }
 
         try {
-             price = strArray[3].split("τ")[1].trim();
-             return price;
+            price = strArray[3].split("τ")[1].trim();
+            return price;
         } catch (Exception ex) {
+            System.out.println("input: " + input);
             System.out.println(ex.getMessage());
         }
 
@@ -29,6 +41,7 @@ public class StringUtils {
             price = strArray[7].split("τ")[1].trim();
             return price;
         } catch (Exception ex) {
+            System.out.println("input: " + input);
             System.out.println(ex.getMessage());
         }
 
@@ -36,10 +49,10 @@ public class StringUtils {
         return price;
     }
 
-    public static String priceMessage(String subnetID, String price){
+    public static String priceMessage(String subnetID, String price) {
         LocalDateTime now = LocalDateTime.now();
         String formattedDateTime = now.format(FORMATTER);
-        String text = String.format("Price of subnet %s at %s is : %s",subnetID, formattedDateTime, price);
+        String text = String.format("Price of subnet %s at %s is : %s", subnetID, formattedDateTime, price);
         return text;
     }
 }

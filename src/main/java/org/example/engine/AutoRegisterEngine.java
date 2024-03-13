@@ -4,7 +4,6 @@ import org.example.telegram.TeleGramMessageSender;
 import org.example.utils.PropertyUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.example.script.RunShellScript.register;
@@ -19,8 +18,7 @@ public class AutoRegisterEngine {
     }
 
     public static void main(String[] args) throws Exception {
-        String[] subnetIdArray = PropertyUtils.getProperty("register.subnetId").split(",");
-        startRunningAutoRegisterEngine(Arrays.asList(subnetIdArray));
+
     }
 
     public static void startRunningAutoRegisterEngine(List<String> listSubnetId) {

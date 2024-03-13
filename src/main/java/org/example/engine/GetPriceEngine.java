@@ -6,7 +6,6 @@ import org.example.utils.PropertyUtils;
 import org.example.utils.StringUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -30,8 +29,6 @@ public class GetPriceEngine {
 
     public static void main(String[] args) {
 
-        String[] subnetIdArray = PropertyUtils.getProperty("get.price.subnetId").split(",");
-        startRunningGetPrice(Arrays.asList(subnetIdArray));
 
     }
 
