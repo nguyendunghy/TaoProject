@@ -16,7 +16,7 @@ get.price.hotkey=jackie_hotkey_22
 
 #script
 script.register.path=/home/fsuser/TaoProject/src/main/resources/runAutoRegister.sh
-script.get.register.price.path=home/fsuser/TaoProject/src/main/resources/runGetRegisterPrice.sh
+script.get.register.price.path=/home/fsuser/TaoProject/src/main/resources/runGetRegisterPrice.sh
 
 #unit is minute
 max.time.no.send.message=30
