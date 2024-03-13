@@ -3,15 +3,7 @@ package org.example.utils;
 import java.util.HashMap;
 
 public class Constants {
-    public static String SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID = "@BittensorSubnetRegisterPrice";
-    public static String GET_REGISTER_PRICE_SCRIPT_PATH = "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/runGetRegisterPrice.sh";
-    public static String REGISTER_SUBNET_SCRIPT_PATH = "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/runAutoRegister.sh";
+    public static HashMap<String,Double> MAX_REGISTER_PRICE_MAP = new HashMap<>() ;
 
-    public static HashMap<String,Double> MAX_REGISTER_PRICE_MAP =  new HashMap<String, Double>() {{
-        put("32", 0.06D);
-        put("26", 0.3D);
-        put("6", 0.0000001D);
-        put("1", 0.06D);
-
-    }};
+    public static String CONFIG_FILE = "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property";
 }

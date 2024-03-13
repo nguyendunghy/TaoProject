@@ -1,23 +1,20 @@
 package org.example.engine;
 
-import org.example.utils.Constants;
 import org.example.script.RunShellScript;
-import org.example.utils.StringUtils;
 import org.example.telegram.TeleGramMessageSender;
+import org.example.utils.PropertyUtils;
+import org.example.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.example.utils.Constants.SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class GetPriceEngine {
 
     private static Double REGISTER_PRICE_THRESHOLD = 10D;
-
-    private static long MAX_TIME_NO_SEND_MESSAGE = 30;//30 min
 
 
     private String previousPrice = null;
@@ -32,12 +29,9 @@ public class GetPriceEngine {
     }
 
     public static void main(String[] args) {
-        List<String> listSubnetId = Arrays.asList(
-//                "32",
-//                "1",
-                "26"
-        );
-        startRunningGetPrice(listSubnetId);
+
+        String[] subnetIdArray = PropertyUtils.getProperty("get.price.subnetId").split(",");
+        startRunningGetPrice(Arrays.asList(subnetIdArray));
 
     }
 
@@ -62,12 +56,15 @@ public class GetPriceEngine {
     public void run() {
         while (true) {
             try {
-                String scriptOutput = RunShellScript.run(Constants.GET_REGISTER_PRICE_SCRIPT_PATH, subnetId);
+                String getRegisterPricePath = PropertyUtils.getProperty("script.get.register.price.path");
+                String hotkey = PropertyUtils.getProperty("get.price.hotkey");
+                String scriptOutput = RunShellScript.getPriceLinuxCommand(getRegisterPricePath, subnetId, hotkey);
                 currentPrice = StringUtils.extractPrice(scriptOutput);
                 String message = StringUtils.priceMessage(subnetId, currentPrice);
                 System.out.println(message);
                 if (shouldSendMessage(currentPrice)) {
-                    TeleGramMessageSender.sendMessage(SUBNET_REGISTER_PRICE_CHANNEL_CHAT_ID, message);
+                    String channelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
+                    TeleGramMessageSender.sendMessage(channelId, message);
                     previousSendTime = System.currentTimeMillis();
                 }
                 previousPrice = currentPrice;
@@ -79,8 +76,8 @@ public class GetPriceEngine {
     }
 
     private boolean shouldSendMessage(String price) {
-        //send message if no message is sent in 30min
-        if (System.currentTimeMillis() - previousSendTime > MAX_TIME_NO_SEND_MESSAGE * 60 * 1000) {
+        Long maxTimeNoSendMessage = Long.parseLong(PropertyUtils.getProperty("max.time.no.send.message"));
+        if (System.currentTimeMillis() - previousSendTime > maxTimeNoSendMessage * 60 * 1000) {
             return true;
         }
 
