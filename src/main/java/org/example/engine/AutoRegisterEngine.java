@@ -58,9 +58,7 @@ public class AutoRegisterEngine {
         }
     }
 
-    private String genPublicKey() {
-        return "jackie_hotkey_24";
-    }
+
 
 
 }

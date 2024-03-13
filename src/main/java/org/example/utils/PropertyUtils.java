@@ -46,7 +46,7 @@ public class PropertyUtils {
 
             HashMap<String, Double> maxRegisterPriceMap = new HashMap<>();
             for (String key : filteredKeys) {
-                maxRegisterPriceMap.put(key, Double.valueOf(properties.getProperty(key)));
+                maxRegisterPriceMap.put(key.replaceAll("max.register.price.",""), Double.valueOf(properties.getProperty(key)));
             }
             return maxRegisterPriceMap;
 
