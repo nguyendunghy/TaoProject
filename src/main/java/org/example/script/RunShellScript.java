@@ -7,71 +7,19 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class RunShellScript {
-    public static String getPriceLinuxCommand(String scriptPath, String subnetId, String hotkey) {
-        try {
-            // Create process builder
-            String runScriptPath = folderOfScript();
-            ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, hotkey, runScriptPath);
-            // Redirect error stream to output stream
-            processBuilder.redirectErrorStream(true);
-
-            // Start the process
-            Process process = processBuilder.start();
-
-            // Get input stream of the process
-            InputStream inputStream = process.getInputStream();
-
-            // Read the output of the process
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String line = "";
-            StringBuilder output = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                output.append(line).append("\n");
-            }
-
-            return output.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
+    public static String getPriceLinuxCommand(String scriptPath, String subnetId, String hotkey) throws Exception {
+        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, hotkey, folderOfScript());
+        return runScript(processBuilder);
     }
 
-    private static String folderOfScript() throws Exception {
-        String path = PropertyUtils.getPriceRegisterScriptPath();
-        int index = path.lastIndexOf("/");
-        return path.substring(0, index);
+    public static String register(String scriptPath, String subnetId, String threshold, String hotkey) throws Exception{
+        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, folderOfScript());
+        return runScript(processBuilder);
     }
 
-
-    public static String register(String scriptPath, String subnetId, String threshold, String hotkey) {
-        try {
-            // Create process builder
-            String runScriptPath = folderOfScript();
-            ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, runScriptPath);
-            // Redirect error stream to output stream
-            processBuilder.redirectErrorStream(true);
-
-            // Start the process
-            Process process = processBuilder.start();
-
-            // Get input stream of the process
-            InputStream inputStream = process.getInputStream();
-
-            // Read the output of the process
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String line = "";
-            StringBuilder output = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                output.append(line).append("\n");
-            }
-
-            return output.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
+    public static String runMonitorScript(String command){
+        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+        return runScript(processBuilder);
     }
 
     public static String getPrice(String netId, String coldKey, String hotKey) throws Exception {
@@ -144,6 +92,38 @@ public class RunShellScript {
         }
     }
 
+    private static String runScript(ProcessBuilder processBuilder ){
+        try {
+             // Redirect error stream to output stream
+            processBuilder.redirectErrorStream(true);
+
+            // Start the process
+            Process process = processBuilder.start();
+
+            // Get input stream of the process
+            InputStream inputStream = process.getInputStream();
+
+            // Read the output of the process
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line = "";
+            StringBuilder output = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append("\n");
+            }
+
+            return output.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    private static String folderOfScript() throws Exception {
+        String path = PropertyUtils.getPriceRegisterScriptPath();
+        int index = path.lastIndexOf("/");
+        return path.substring(0, index);
+    }
     public static void main(String[] args) {
 
     }

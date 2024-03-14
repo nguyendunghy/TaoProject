@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import static org.example.utils.Constants.MAX_REGISTER_PRICE_MAP;
+import static org.example.utils.Constants.PROJECT_LOCATION;
 
 public class PropertyUtils {
 
@@ -38,13 +39,23 @@ public class PropertyUtils {
     }
 
     public static String getPriceRegisterScriptPath() throws Exception {
-        String key = SystemUtils.getIpAddress() + ".script.get.register.price.path";
-        return properties.getProperty(key);
+        String path = PROJECT_LOCATION + getProperty("script.get.register.price.path");
+        return path;
     }
 
     public static String registerSubnetScriptPath() throws Exception {
-        String key = SystemUtils.getIpAddress() + ".script.register.path";
-        return properties.getProperty(key);
+        String path = PROJECT_LOCATION + getProperty("script.register.path");
+        return path;
+    }
+
+    public static String getProjectLocation() {
+        try {
+            String ip = SystemUtils.getIpAddress();
+            String key = ip + "..project.location";
+            return getProperty(key);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static HashMap<String, Double> buildMaxRegisterPriceMap() {
