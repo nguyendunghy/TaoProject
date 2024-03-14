@@ -19,8 +19,8 @@ get.price.hotkey=jackie_hotkey_22
 192.168.102.3.script.get.register.price.path=/Users/nannan/IdeaProjects/TaoProject/src/main/resources/runGetRegisterPrice.sh
 
 #script path server
-216.153.51.30:script.register.path=/home/fsuser/TaoProject/src/main/resources/runAutoRegister.sh
-216.153.51.30:script.get.register.price.path=/home/fsuser/TaoProject/src/main/resources/runGetRegisterPrice.sh
+127.0.1.1.script.register.path=/home/fsuser/TaoProject/src/main/resources/runAutoRegister.sh
+127.0.1.1.script.get.register.price.path=/home/fsuser/TaoProject/src/main/resources/runGetRegisterPrice.sh
 
 
 #unit is minute
