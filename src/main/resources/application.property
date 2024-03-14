@@ -31,7 +31,7 @@ max.time.no.send.message=30
 
 #telegram channel id
 subnet.register.price.channel.chat.id=@BittensorSubnetRegisterPrice
-
+monitor.threads.channel.chat.id=@BittensorSubnetRegisterPrice
 
 #monitor config
 monitor.get.info.command=ps -ef|grep python

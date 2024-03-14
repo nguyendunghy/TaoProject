@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
+import org.example.monitor.MonitorImpl;
 import org.example.utils.Constants;
 import org.example.utils.PropertyUtils;
 
@@ -9,7 +10,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        args = new String[]{"GET_PRICE", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
+//        args = new String[]{"MONITOR", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
 
         if (args == null || args.length < 2) {
             System.out.println("Missing argument, the first argument is GET_PRICE,AUTO_REGISTER or MONITOR. The second argument is property file path");
@@ -26,6 +27,8 @@ public class Main {
                 AutoRegisterEngine.startRunningAutoRegisterEngine(Arrays.asList(subnetIdArray));
                 break;
             case "MONITOR":
+                MonitorImpl monitor = new MonitorImpl();
+                monitor.run();
                 break;
             default:
                 break;

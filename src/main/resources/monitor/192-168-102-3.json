@@ -1,0 +1,22 @@
+{
+  "ip": "192.168.102.3",
+  "threadConfigs": [
+    {
+      "command": "ps -ef|grep java",
+      "location": "/Users/nannan/IdeaProjects/TaoProject",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_23",
+      "logFilePath": "/Users/nannan/IdeaProjects/TaoProject/logs/getPrice.log",
+      "message": "Test monitor message for hotkey jackie_hotkey_23"
+    },
+    {
+      "command": "ps -ef|grep java",
+      "location": "/Users/nannan/IdeaProjects/TaoProject",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_22",
+      "logFilePath": "/Users/nannan/IdeaProjects/TaoProject/logs/monitor.log",
+      "message": "Test monitor message for hotkey jackie_hotkey_22"
+    }
+  ],
+  "timeSleep": 10
+}

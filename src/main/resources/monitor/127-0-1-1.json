@@ -1,19 +1,22 @@
 {
   "ip": "127.0.1.1",
-  "threads": [
+  "threadConfigs": [
     {
       "command": "ps -ef|grep python",
       "location": "home/fsuser/TaoProject",
-      "operator": "CONTAIN",
+      "operator": "NOT_CONTAIN",
       "checkedString": "jackie_hotkey_23",
-      "logFilePath": "/home/fsuser/output.log"
+      "logFilePath": "/home/fsuser/output.log",
+      "message": "Thread mining subnet 32 hotkey jackie_hotkey_23 die"
     },
     {
       "command": "ps -ef|grep python",
       "location": "home/fsuser/TaoProject",
-      "operator": "CONTAIN",
+      "operator": "NOT_CONTAIN",
       "checkedString": "jackie_hotkey_22",
-      "logFilePath": "/home/fsuser/output.log"
+      "logFilePath": "/home/fsuser/output.log",
+      "message": "Thread mining subnet 32 hotkey jackie_hotkey_22 die"
+
     }
   ],
   "timeSleep": 10
