@@ -68,6 +68,10 @@ public class MonitorImpl implements Monitor {
 
     @Override
     public String doAction(List<String> issueList) {
+        if(issueList == null || issueList.isEmpty()){
+            System.out.println("All good, no issue !");
+        }
+
         for (String issue : issueList) {
             String telegramChannelId = PropertyUtils.getProperty("monitor.threads.channel.chat.id");
             TeleGramMessageSender.sendMessage(telegramChannelId, issue);
