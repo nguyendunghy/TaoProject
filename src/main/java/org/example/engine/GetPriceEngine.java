@@ -65,6 +65,7 @@ public class GetPriceEngine {
                     previousSendTime = System.currentTimeMillis();
                 }
                 previousPrice = currentPrice;
+                Thread.sleep(Long.parseLong(PropertyUtils.getProperty("get.price.thread.sleep")));
 
             } catch (Exception ex) {
                 ex.printStackTrace();

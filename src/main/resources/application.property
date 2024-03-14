@@ -13,6 +13,7 @@ register.hotkey=jackie_hotkey_23
 
 get.price.subnetId=26
 get.price.hotkey=jackie_hotkey_22
+get.price.thread.sleep=3000
 
 #script path local
 192.168.102.3.script.register.path=/Users/nannan/IdeaProjects/TaoProject/src/main/resources/runAutoRegister.sh
