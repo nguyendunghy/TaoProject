@@ -1,7 +1,6 @@
 package org.example.utils;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.HashMap;
@@ -40,6 +39,11 @@ public class PropertyUtils {
 
     public static String getPriceRegisterScriptPath() throws Exception {
         String key = SystemUtils.getIpAddress() + ".script.get.register.price.path";
+        return properties.getProperty(key);
+    }
+
+    public static String registerSubnetScriptPath() throws Exception {
+        String key = SystemUtils.getIpAddress() + ".script.register.path";
         return properties.getProperty(key);
     }
 

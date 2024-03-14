@@ -47,7 +47,8 @@ public class RunShellScript {
     public static String register(String scriptPath, String subnetId, String threshold, String hotkey) {
         try {
             // Create process builder
-            ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey);
+            String runScriptPath = folderOfScript();
+            ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, runScriptPath);
             // Redirect error stream to output stream
             processBuilder.redirectErrorStream(true);
 
