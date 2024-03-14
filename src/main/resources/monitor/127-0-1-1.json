@@ -5,9 +5,9 @@
       "command": "ps -ef|grep python",
       "location": "home/fsuser/TaoProject",
       "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_23",
-      "logFilePath": "/home/fsuser/hotkey23_output.log",
-      "message": "Thread mining subnet:26 hotkey:jackie_hotkey_23 ip:216.153.50.251 die"
+      "checkedString": "jackie_hotkey_22",
+      "logFilePath": "/home/fsuser/hotkey22_output.log",
+      "message": "Thread mining subnet:26 hotkey:jackie_hotkey_22 ip:216.153.51.24 die"
     }
   ],
   "timeSleep": 10
