@@ -70,6 +70,7 @@ public class MonitorImpl implements Monitor {
     public String doAction(List<String> issueList) {
         if(issueList == null || issueList.isEmpty()){
             System.out.println("All good, no issue !");
+            return "SUCCESS";
         }
 
         for (String issue : issueList) {
@@ -77,7 +78,7 @@ public class MonitorImpl implements Monitor {
             TeleGramMessageSender.sendMessage(telegramChannelId, issue);
         }
 
-        return "SUCCESS";
+        return "ISSUE";
     }
 
     @Override
