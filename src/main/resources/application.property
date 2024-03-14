@@ -11,7 +11,7 @@ max.register.price.32=0.06
 register.subnetId=6
 register.hotkey=jackie_hotkey_23
 
-get.price.subnetId=26
+get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
 get.price.thread.sleep=3000
 
