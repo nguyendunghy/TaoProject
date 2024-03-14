@@ -11,12 +11,17 @@ max.register.price.32=0.06
 register.subnetId=6
 register.hotkey=jackie_hotkey_23
 
-get.price.subnetId=26,32
+get.price.subnetId=26
 get.price.hotkey=jackie_hotkey_22
 
-#script
-script.register.path=/home/fsuser/TaoProject/src/main/resources/runAutoRegister.sh
-script.get.register.price.path=/home/fsuser/TaoProject/src/main/resources/runGetRegisterPrice.sh
+#script path local
+192.168.102.3.script.register.path=/Users/nannan/IdeaProjects/TaoProject/src/main/resources/runAutoRegister.sh
+192.168.102.3.script.get.register.price.path=/Users/nannan/IdeaProjects/TaoProject/src/main/resources/runGetRegisterPrice.sh
+
+#script path server
+216.153.51.30:script.register.path=/home/fsuser/TaoProject/src/main/resources/runAutoRegister.sh
+216.153.51.30:script.get.register.price.path=/home/fsuser/TaoProject/src/main/resources/runGetRegisterPrice.sh
+
 
 #unit is minute
 max.time.no.send.message=30
