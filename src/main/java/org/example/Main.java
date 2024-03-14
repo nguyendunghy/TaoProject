@@ -1,5 +1,7 @@
-package org.example.engine;
+package org.example;
 
+import org.example.engine.AutoRegisterEngine;
+import org.example.engine.GetPriceEngine;
 import org.example.utils.Constants;
 import org.example.utils.PropertyUtils;
 
@@ -10,7 +12,7 @@ public class Main {
 //        args = new String[]{"GET_PRICE", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
 
         if (args == null || args.length < 2) {
-            System.out.println("Missing argument, the first argument is AUTO_REGISTER or GET_PRICE. The second argument is property file path");
+            System.out.println("Missing argument, the first argument is GET_PRICE,AUTO_REGISTER or MONITOR. The second argument is property file path");
         }
         Constants.CONFIG_FILE = args[1];
         String[] subnetIdArray;
@@ -22,6 +24,8 @@ public class Main {
             case "AUTO_REGISTER":
                 subnetIdArray = PropertyUtils.getProperty("register.subnetId").split(",");
                 AutoRegisterEngine.startRunningAutoRegisterEngine(Arrays.asList(subnetIdArray));
+                break;
+            case "MONITOR":
                 break;
             default:
                 break;
