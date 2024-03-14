@@ -7,6 +7,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+//        args = new String[]{"GET_PRICE", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
+
         if (args == null || args.length < 2) {
             System.out.println("Missing argument, the first argument is AUTO_REGISTER or GET_PRICE. The second argument is property file path");
         }

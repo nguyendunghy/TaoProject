@@ -37,10 +37,10 @@ public class RunShellScript {
         return "";
     }
 
-    private static String folderOfScript(){
-        String path = PropertyUtils.getProperty("script.get.register.price.path");
+    private static String folderOfScript() throws Exception {
+        String path = PropertyUtils.getPriceRegisterScriptPath();
         int index = path.lastIndexOf("/");
-        return path.substring(0,index);
+        return path.substring(0, index);
     }
 
 

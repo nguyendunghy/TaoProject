@@ -38,6 +38,11 @@ public class PropertyUtils {
         return properties.getProperty(key, defaultValue);
     }
 
+    public static String getPriceRegisterScriptPath() throws Exception {
+        String key = SystemUtils.getIpAddress() + ".script.get.register.price.path";
+        return properties.getProperty(key);
+    }
+
     private static HashMap<String, Double> buildMaxRegisterPriceMap() {
         try {
             Set<String> filteredKeys = properties.stringPropertyNames().stream()

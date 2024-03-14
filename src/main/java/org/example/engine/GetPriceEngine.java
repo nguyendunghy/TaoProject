@@ -53,7 +53,7 @@ public class GetPriceEngine {
     public void run() {
         while (true) {
             try {
-                String getRegisterPricePath = PropertyUtils.getProperty("script.get.register.price.path");
+                String getRegisterPricePath = PropertyUtils.getPriceRegisterScriptPath();
                 String hotkey = PropertyUtils.getProperty("get.price.hotkey");
                 String scriptOutput = RunShellScript.getPriceLinuxCommand(getRegisterPricePath, subnetId, hotkey);
                 currentPrice = StringUtils.extractPrice(scriptOutput);
