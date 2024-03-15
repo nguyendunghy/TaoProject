@@ -37,6 +37,6 @@ build/
 ### Mac OS ###
 .DS_Store
 
-.logs/
-.logs/getPrice.log
+#.logs/
+#.logs/getPrice.log
 dependency-reduced-pom.xml
