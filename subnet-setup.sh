@@ -1,3 +1,4 @@
+cd ~
 git clone https://github.com/It-s-AI/llm-detection
 cd llm-detection
 python3 -m pip install -e .
