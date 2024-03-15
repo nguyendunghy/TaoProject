@@ -4,7 +4,7 @@ set password "Iltmt@e1"
 set timeout 90
 
 
-cd ~/.bittensor/wallets/default
+#cd ~/.bittensor/wallets/default
 spawn btcli w regen_coldkey --mnemonic margin tragic zero reject upset dad heart sound advice century cool surface
 
 expect {
