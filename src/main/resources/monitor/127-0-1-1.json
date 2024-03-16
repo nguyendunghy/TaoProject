@@ -2,12 +2,12 @@
   "ip": "127.0.1.1",
   "threadConfigs": [
     {
-      "command": "ps -ef|grep python",
+      "command": "ps -ef|grep python3",
       "location": "/home/fsuser/TaoProject",
       "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_23",
-      "logFilePath": "/home/fsuser/llm-detection/hotkey23_output.log",
-      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_23 ip:216.153.51.237 die"
+      "checkedString": "jackie_hotkey_22",
+      "logFilePath": "/home/fsuser/llm-detection/subnet32_hotkey22_output.log",
+      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_22 ip:216.153.51.24 die"
     }
   ],
   "timeSleep": 30
