@@ -1,8 +1,8 @@
 cd ~
-git clone https://github.com/It-s-AI/llm-detection
-cd llm-detection
-python3 -m pip install -e .
+git clone https://github.com/Supreme-Emperor-Wang/ImageAlchemy.git
+cd ~/ImageAlchemy
+pip install -r requirements.txt
 
-nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_22 --logging.debug --neuron.device cuda:0 --axon.port 2023 --subtensor.network local --blacklist.force_validator_permit true >> hotkey22_output.log &
+nohup python ~/ImageAlchemy/neurons/miners/StableMiner/main.py --wallet.name default --wallet.hotkey jackie_hotkey_24 --netuid 26 --subtensor.network local --axon.port 8102 --miner.device cuda:0 --blacklist.force_validator_permit true  >> hotkey24_output.log &
 
-nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_23 --logging.debug --neuron.device cuda:0 --axon.port 1992 --subtensor.network local --blacklist.force_validator_permit true  >> hotkey23_output.log &
+
