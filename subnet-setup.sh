@@ -1,5 +1,6 @@
 cd ~
 git clone https://github.com/Supreme-Emperor-Wang/ImageAlchemy.git
+#git clone git@github.com:Supreme-Emperor-Wang/ImageAlchemy.git
 cd ~/ImageAlchemy
 pip install -r requirements.txt
 
