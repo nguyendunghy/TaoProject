@@ -3,12 +3,20 @@
   "threadConfigs": [
     {
       "command": "ps -ef|grep python",
-      "location": "home/fsuser/TaoProject",
+      "location": "/home/fsuser/TaoProject",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_22",
+      "logFilePath": "/home/fsuser/llm-detection/hotkey22_output.log",
+      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_22 ip:216.153.50.59 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/home/fsuser/TaoProject",
       "operator": "NOT_CONTAIN",
       "checkedString": "jackie_hotkey_23",
-      "logFilePath": "/home/fsuser/hotkey23_output.log",
-      "message": "Thread mining subnet:26 hotkey:jackie_hotkey_23 ip:216.153.50.251 die"
+      "logFilePath": "/home/fsuser/llm-detection/hotkey23_output.log",
+      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_23 ip:216.153.50.59 die"
     }
   ],
-  "timeSleep": 10
+  "timeSleep": 30
 }
