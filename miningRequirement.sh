@@ -7,11 +7,23 @@ pip3 install bittensor
 ./install-keys/install-hotkey-all.sh
 
 #install subtensor
-cd ..
+cd ~
 git clone https://github.com/opentensor/subtensor.git
 cd subtensor
 sudo ./scripts/run/subtensor.sh -e docker --network mainnet --node-type lite
 pwd
+
+#install project
+cd ~
+git clone https://github.com/Supreme-Emperor-Wang/ImageAlchemy.git
+#git clone git@github.com:Supreme-Emperor-Wang/ImageAlchemy.git
+cd ~/ImageAlchemy
+pip install -r requirements.txt
+
+#upgrade torch and torchvision
+pip install torch torchvision --upgrade
+cd ~/ImageAlchemy
+export PYTHONPATH=`pwd`
 
 #install new driver
 cd ..
