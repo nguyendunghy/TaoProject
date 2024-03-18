@@ -18,7 +18,7 @@ expect {
 
 expect {
     "Enter network *" {
-        send "local\r"
+        send "finney\r"
     }
 }
 
