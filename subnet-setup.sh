@@ -5,10 +5,10 @@ cd ~/ImageAlchemy
 pip install -r requirements.txt
 
 #local
-nohup python ~/ImageAlchemy/neurons/miners/StableMiner/main.py --wallet.name default --wallet.hotkey jackie_hotkey_22 --netuid 26 --subtensor.network local --axon.port 8102 --miner.device cuda:0 --blacklist.force_validator_permit true  >> hotkey22_output.log &
+#nohup python ~/ImageAlchemy/neurons/miners/StableMiner/main.py --wallet.name default --wallet.hotkey jackie_hotkey_22 --netuid 26 --subtensor.network local --axon.port 8102 --miner.device cuda:0 --blacklist.force_validator_permit true  >> hotkey22_output.log &
 
 #main net
-#nohup python ~/ImageAlchemy/neurons/miners/StableMiner/main.py --wallet.name default --wallet.hotkey jackie_hotkey_23 --netuid 26 --subtensor.network finney --axon.port 2023 --miner.device cuda:0 --blacklist.force_validator_permit true  >> hotkey23_output.log &
+nohup python ~/ImageAlchemy/neurons/miners/StableMiner/main.py --wallet.name default --wallet.hotkey jackie_hotkey_25 --netuid 26 --subtensor.network finney --axon.port 42140 --miner.device cuda:0 --blacklist.force_validator_permit true  >> hotkey25_output.log &
 
 
 #in case mainnet failed

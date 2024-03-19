@@ -7,11 +7,11 @@ pip3 install bittensor
 ./install-keys/install-hotkey-all.sh
 
 #install subtensor
-cd ~
-git clone https://github.com/opentensor/subtensor.git
-cd subtensor
-sudo ./scripts/run/subtensor.sh -e docker --network mainnet --node-type lite
-pwd
+#cd ~
+#git clone https://github.com/opentensor/subtensor.git
+#cd subtensor
+#sudo ./scripts/run/subtensor.sh -e docker --network mainnet --node-type lite
+#pwd
 
 #install project
 cd ~
