@@ -59,6 +59,7 @@ public class AutoRegisterEngine {
                     String telegramChannelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
                     TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId + " hotkey: " + hotkey);
                 }
+                Thread.sleep(500);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
