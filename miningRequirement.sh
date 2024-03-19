@@ -13,20 +13,31 @@ pip3 install bittensor
 #sudo ./scripts/run/subtensor.sh -e docker --network mainnet --node-type lite
 #pwd
 
-#install project
-cd ~
 git clone https://github.com/Supreme-Emperor-Wang/ImageAlchemy.git
-#git clone git@github.com:Supreme-Emperor-Wang/ImageAlchemy.git
+sudo apt-get update
+sudo apt-get install python3.10-venv
+python3.10 -m venv ~/venvs/ImageAlchemy
+source ~/venvs/ImageAlchemy/bin/activate
+pip install wheel
+pip install --upgrade setuptools
+source ~/venvs/ImageAlchemy/bin/activate
 cd ~/ImageAlchemy
-pip install -r requirements.txt
+pip install -e .
+
+#install project
+#cd ~
+#git clone https://github.com/Supreme-Emperor-Wang/ImageAlchemy.git
+##git clone git@github.com:Supreme-Emperor-Wang/ImageAlchemy.git
+#cd ~/ImageAlchemy
+#pip install -r requirements.txt
 
 #upgrade torch and torchvision
-pip install torch torchvision --upgrade
-cd ~/ImageAlchemy
-export PYTHONPATH=`pwd`
+#pip install torch torchvision --upgrade
+#cd ~/ImageAlchemy
+#export PYTHONPATH=`pwd`
 
 #install new driver
-cd ..
-sudo curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run
-sudo chmod 777 NVIDIA-Linux-x86_64-550.54.14.run
-sudo ./NVIDIA-Linux-x86_64-550.54.14.run
+#cd ..
+#sudo curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run
+#sudo chmod 777 NVIDIA-Linux-x86_64-550.54.14.run
+#sudo ./NVIDIA-Linux-x86_64-550.54.14.run
