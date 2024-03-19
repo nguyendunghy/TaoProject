@@ -1,3 +1,5 @@
+#instruction: https://docs.google.com/document/d/1FzZe5EskEV0Q6BkOuVkqCrIEexzQZd_134eT74B7hPA/edit
+
 #install bittensor
 pip install --upgrade pip
 pip3 install bittensor
