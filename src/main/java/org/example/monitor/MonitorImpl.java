@@ -95,7 +95,7 @@ public class MonitorImpl implements Monitor {
     private MonitorConfig initMonitorConfigFromFile() throws Exception {
         String ip = getIpAddress();
         String fileName = String.join("-", ip.split("\\.")) + ".json";
-        String directory = Constants.PROJECT_LOCATION + PropertyUtils.getProperty("monitor.config.path");
+        String directory = PropertyUtils.getProjectLocation() + PropertyUtils.getProperty("monitor.config.path");
         String fullFilePath = directory + "/" + fileName;
         File jsonFile = new File(fullFilePath);
         this.monitorConfig = objectMapper.readValue(jsonFile, MonitorConfig.class);

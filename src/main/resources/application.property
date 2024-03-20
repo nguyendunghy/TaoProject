@@ -21,6 +21,7 @@ get.price.thread.sleep=3000
 
 
 #script path local
+script.check.balance.path=src/main/resources/runCheckBalance.sh
 script.register.path=src/main/resources/runAutoRegister.sh
 script.get.register.price.path=src/main/resources/runGetRegisterPrice.sh
 

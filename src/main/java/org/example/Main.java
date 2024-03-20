@@ -3,14 +3,15 @@ package org.example;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
 import org.example.monitor.MonitorImpl;
+import org.example.script.RunShellScript;
 import org.example.utils.Constants;
 import org.example.utils.PropertyUtils;
 
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-//        args = new String[]{"MONITOR", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
+    public static void main(String[] args) throws Exception{
+        args = new String[]{"CHECK_BALANCE", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
 
         if (args == null || args.length < 2) {
             System.out.println("Missing argument, the first argument is GET_PRICE,AUTO_REGISTER or MONITOR. The second argument is property file path");
@@ -29,6 +30,9 @@ public class Main {
             case "MONITOR":
                 MonitorImpl monitor = new MonitorImpl();
                 monitor.run();
+                break;
+            case "CHECK_BALANCE":
+                System.out.println(RunShellScript.checkAllBalance());
                 break;
             default:
                 break;

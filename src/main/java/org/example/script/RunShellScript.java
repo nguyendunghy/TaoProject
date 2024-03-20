@@ -19,6 +19,12 @@ public class RunShellScript {
         return runScript(processBuilder);
     }
 
+    public static String checkAllBalance() throws Exception {
+        String scriptPath = PropertyUtils.checkBalanceScriptPath();
+        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath);
+        return runScript(processBuilder);
+    }
+
     public static String runMonitorScript(String command){
         List<String> commands = new ArrayList<>();
         commands.add("/bin/sh");
@@ -64,7 +70,7 @@ public class RunShellScript {
         }
     }
 
-    public static String checkBalance() throws Exception {
+    public static String checkFreeBalance() throws Exception {
         String command = String.format("btcli subnet register --netuid %s --wallet.name %s --wallet.hotkey %s", "6", "default", "jackie_hotkey_22");
         String networkAnswer = "finney";
         String isContinueAnswer = "n";
@@ -131,8 +137,9 @@ public class RunShellScript {
         int index = path.lastIndexOf("/");
         return path.substring(0, index);
     }
-    public static void main(String[] args) {
-        System.out.println(runMonitorScript("ps -ef|grep java"));
+    public static void main(String[] args) throws Exception {
+        System.out.println(checkAllBalance());
+//        System.out.println(runMonitorScript("ps -ef|grep java"));
     }
 
 }

@@ -39,20 +39,29 @@ public class PropertyUtils {
     }
 
     public static String getPriceRegisterScriptPath() throws Exception {
-        String path = PROJECT_LOCATION + getProperty("script.get.register.price.path");
+        String path = getProjectLocation() + getProperty("script.get.register.price.path");
         return path;
     }
 
     public static String registerSubnetScriptPath() throws Exception {
-        String path = PROJECT_LOCATION + getProperty("script.register.path");
+        String path = getProjectLocation() + getProperty("script.register.path");
+        return path;
+    }
+
+    public static String checkBalanceScriptPath() throws Exception {
+        String path = getProjectLocation() + getProperty("script.check.balance.path");
         return path;
     }
 
     public static String getProjectLocation() {
         try {
+            if(PROJECT_LOCATION != null && !PROJECT_LOCATION.trim().isEmpty()){
+                return PROJECT_LOCATION;
+            }
             String ip = SystemUtils.getIpAddress();
-            String key = ip + "..project.location";
-            return getProperty(key);
+            String key = ip + ".project.location";
+            PROJECT_LOCATION = getProperty(key);
+            return PROJECT_LOCATION;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
