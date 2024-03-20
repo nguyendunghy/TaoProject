@@ -122,6 +122,7 @@ public class RunShellScript {
             StringBuilder output = new StringBuilder();
             while ((line = reader.readLine()) != null) {
                 output.append(line).append("\n");
+                Thread.sleep(1000);
             }
 
             return output.toString();

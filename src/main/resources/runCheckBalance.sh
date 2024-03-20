@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./runCheckBalance.sh
+echo "$(./checkBalance.sh)" | ansi2txt
