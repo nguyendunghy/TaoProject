@@ -51,7 +51,7 @@ public class RedisManager {
                 jedis.select(db);
                 jedis.set(sha256hex, "");
                 count++;
-                logger.info("load data line: " + count + "sha256: " + sha256hex);
+                logger.info("load data line: " + count + ": sha256: " + sha256hex);
 
             }
         } catch (Exception e) {
