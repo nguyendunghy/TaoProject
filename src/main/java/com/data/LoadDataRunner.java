@@ -18,29 +18,29 @@ public class LoadDataRunner implements Runnable {
     private static String TARGET_FILE_TEMPLATE = "c4-train.${index}-of-01024.json";
     private static final Logger logger = LogManager.getLogger(LoadDataRunner.class);
 
-    private int threadId;
+    private int startFileIndex;
+
+    private int endFileIndex;
 
     public LoadDataRunner() {}
 
-    public LoadDataRunner(int threadId) {
-        this.threadId = threadId;
+    public LoadDataRunner(int startFileIndex, int endFileIndex) {
+        this.startFileIndex = startFileIndex;
+        this.endFileIndex = endFileIndex;
     }
 
 
     public void run() {
-        int start = threadId * 32;
-        int end = start + 32;
-        for (int j = start; j < end; j++) {
-            String sourceFileName = SOURCE_FILE_TEMPLATE.replace("${index}", buildIndex(j));
-            String extractedFileName = TARGET_FILE_TEMPLATE.replace("${index}", buildIndex(j));
+        for (int fileIndex = startFileIndex; fileIndex < endFileIndex; fileIndex++) {
+            String sourceFileName = SOURCE_FILE_TEMPLATE.replace("${index}", buildIndex(fileIndex));
+            String extractedFileName = TARGET_FILE_TEMPLATE.replace("${index}", buildIndex(fileIndex));
 
             String sourceFilePath = PropertyUtils.getProperty("c4.source.folder.folder") + sourceFileName;
             String targetFilePath = PropertyUtils.getProperty("c4.extract.folder=") + extractedFileName;
             extract(sourceFilePath, targetFilePath);
             RedisManager.load(targetFilePath);
-
             deleteFile(targetFilePath);
-            logger.info("delete file success: " + targetFilePath);
+            logger.info("load data to redis success with sourceFileName = " + sourceFileName);
         }
     }
 
@@ -49,6 +49,7 @@ public class LoadDataRunner implements Runnable {
         try {
             Path fileToDeletePath = Paths.get(targetFilePath);
             Files.delete(fileToDeletePath);
+            logger.info("delete file success: " + targetFilePath);
         } catch (Exception e) {
             logger.error("delete file failed:", e);
         }

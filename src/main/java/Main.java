@@ -1,3 +1,4 @@
+import com.data.LoadDataEngine;
 import com.data.RedisManager;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
@@ -32,6 +33,9 @@ public class Main {
             case "LOAD_C4":
                 String filePath = PropertyUtils.getProperty("c4.file.path");
                 RedisManager.load(filePath);
+                break;
+            case "LOAD_ALL_C4":
+                LoadDataEngine.assignWorkAndStart();
                 break;
             default:
                 break;

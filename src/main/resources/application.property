@@ -42,3 +42,7 @@ monitor.config.path=src/main/resources/monitor
 c4.file.path=/root/c4-train.00000-of-01024.json
 c4.source.folder.folder=/root/c4-dataset/
 c4.extract.folder=/root/c4-dataset/extract/
+
+
+#redis
+redis.db.number=1000

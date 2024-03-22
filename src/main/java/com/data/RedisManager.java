@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.example.utils.PropertyUtils;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 
 public class RedisManager {
@@ -38,22 +40,26 @@ public class RedisManager {
     }
 
     public static void load(String filePath) {
+        logger.info("start load data "+ filePath);
         long start = System.currentTimeMillis();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        File file = new File(filePath);
+        int numDb = Integer.parseInt(PropertyUtils.getProperty("redis.db.number"));
+        try (BufferedReader reader = new BufferedReader(new FileReader(file));
              Jedis jedis = pool.getResource()) {
             String line;
             int count = 0;
             while ((line = reader.readLine()) != null) {
                 DataEntity entity = objectMapper.readValue(line, DataEntity.class);
-//                logger.info("entity.getText: " + entity.getText());
+                //logger.info("entity.getText: " + entity.getText());
                 String sha256hex = DigestUtils.sha256Hex(entity.getText());
-                int db = Math.abs(sha256hex.hashCode()) % 256;
+                int db = Math.abs(sha256hex.hashCode()) % numDb;
                 jedis.select(db);
                 jedis.set(sha256hex, "");
                 count++;
-                logger.info("load data line: " + count + ": db: " + db + ": sha256: " + sha256hex);
+                logger.info("load data from file: " + file + " :line: " + count + " :db: " + db + " :sha256: " + sha256hex);
 
             }
+            logger.info("load data to redis success:" + filePath);
         } catch (Exception e) {
             logger.error("load data error: ", e);
         } finally {
