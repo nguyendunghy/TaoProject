@@ -45,7 +45,7 @@ public class RedisManager {
             int count = 0;
             while ((line = reader.readLine()) != null) {
                 DataEntity entity = objectMapper.readValue(line, DataEntity.class);
-                logger.info("entity.getText: " + entity.getText());
+//                logger.info("entity.getText: " + entity.getText());
                 String sha256hex = DigestUtils.sha256Hex(entity.getText());
                 int db = Math.abs(sha256hex.hashCode()) % 256;
                 jedis.select(db);
