@@ -1,5 +1,4 @@
-package org.example;
-
+import com.data.RedisManager;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
 import org.example.monitor.MonitorImpl;
@@ -29,6 +28,10 @@ public class Main {
             case "MONITOR":
                 MonitorImpl monitor = new MonitorImpl();
                 monitor.run();
+                break;
+            case "LOAD_C4":
+                String filePath = PropertyUtils.getProperty("c4.file.path");
+                RedisManager.load(filePath);
                 break;
             default:
                 break;
