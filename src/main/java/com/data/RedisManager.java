@@ -46,7 +46,7 @@ public class RedisManager {
                 logger.info("entity.getText: " + entity.getText());
                 String sha256hex = DigestUtils.sha256Hex(entity.getText());
                 logger.info("sha256: " + sha256hex);
-               int db = sha256hex.hashCode() % 256;
+               int db = Math.abs(sha256hex.hashCode()) % 256;
                jedis.select(db);
                jedis.set(sha256hex,"");
 
