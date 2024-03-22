@@ -23,14 +23,14 @@ public class RedisManager {
         }
     }
 
-    public static String get(int db, String key){
+    public static String get(int db, String key) {
         try (Jedis jedis = pool.getResource()) {
             jedis.select(db);
             return jedis.get(key);
         }
     }
 
-    public static boolean exist(int db, String key){
+    public static boolean exist(int db, String key) {
         try (Jedis jedis = pool.getResource()) {
             jedis.select(db);
             return jedis.exists(key);
@@ -38,21 +38,27 @@ public class RedisManager {
     }
 
     public static void load(String filePath) {
+        long start = System.currentTimeMillis();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath));
              Jedis jedis = pool.getResource()) {
             String line;
+            int count = 0;
             while ((line = reader.readLine()) != null) {
-               DataEntity entity = objectMapper.readValue(line, DataEntity.class);
-                logger.info("entity.getText: " + entity.getText());
+                DataEntity entity = objectMapper.readValue(line, DataEntity.class);
+//                logger.info("entity.getText: " + entity.getText());
                 String sha256hex = DigestUtils.sha256Hex(entity.getText());
-                logger.info("sha256: " + sha256hex);
-               int db = Math.abs(sha256hex.hashCode()) % 256;
-               jedis.select(db);
-               jedis.set(sha256hex,"");
+                int db = Math.abs(sha256hex.hashCode()) % 256;
+                jedis.select(db);
+                jedis.set(sha256hex, "");
+                count++;
+                logger.info("load data line: " + count + "sha256: " + sha256hex);
 
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             logger.error("load data error: ", e);
+        } finally {
+            long end = System.currentTimeMillis();
+            logger.info("Time loading: " + (end - start));
         }
     }
 
