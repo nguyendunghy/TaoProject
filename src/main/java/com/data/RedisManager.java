@@ -43,10 +43,13 @@ public class RedisManager {
             String line;
             while ((line = reader.readLine()) != null) {
                DataEntity entity = objectMapper.readValue(line, DataEntity.class);
-               String sha256hex = DigestUtils.sha256Hex(entity.getText());
+                logger.info("entity.getText: " + entity.getText());
+                String sha256hex = DigestUtils.sha256Hex(entity.getText());
+                logger.info("sha256: " + sha256hex);
                int db = sha256hex.hashCode() % 256;
                jedis.select(db);
                jedis.set(sha256hex,"");
+
             }
         } catch (Exception e){
             logger.error("load data error: ", e);
