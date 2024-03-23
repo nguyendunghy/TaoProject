@@ -56,7 +56,7 @@ public class RedisManager {
                 jedis.select(db);
                 jedis.set(sha256hex, "");
                 count++;
-                logger.info("load data from file: " + file + " :line: " + count + " :db: " + db + " :sha256: " + sha256hex);
+                logger.info("load data from file: " + file.getName() + " :line: " + count + " :db: " + db + " :sha256: " + sha256hex);
 
             }
             logger.info("load data to redis success:" + filePath);
