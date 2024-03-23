@@ -82,7 +82,7 @@ public class TestData {
     private static List<Boolean> checkDataExists(Jedis jedis, List<String> listSha256) {
         int numDb = Integer.parseInt(PropertyUtils.getProperty("redis.db.number"));
         List<Boolean> results = new ArrayList<>();
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
 
         for (String sha256hex : listSha256) {
             int db = Math.abs(sha256hex.hashCode()) % numDb;
@@ -95,8 +95,8 @@ public class TestData {
             results.add(exists);
         }
 
-        long end = System.currentTimeMillis();
-        logger.info("Time testing: " + (end - start));
+        long end = System.nanoTime();
+        logger.info("Time checkDataExists nano: " + (end - start));
         return results;
     }
 
