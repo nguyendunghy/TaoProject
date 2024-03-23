@@ -86,6 +86,7 @@ public class TestData {
 
         for (String sha256hex : listSha256) {
             int db = Math.abs(sha256hex.hashCode()) % numDb;
+            logger.info("hash value is = " + sha256hex + " and db= " + db);
             long timeCheckExistStart = System.nanoTime();
             jedis.select(db);
             boolean exists = jedis.exists(sha256hex);
