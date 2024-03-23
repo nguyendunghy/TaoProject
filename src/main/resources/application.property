@@ -39,9 +39,9 @@ monitor.config.path=src/main/resources/monitor
 
 
 #c4 file path
-c4.file.path=/root/c4-train.00000-of-01024.json
-c4.source.folder.folder=/root/c4-dataset/
-c4.extract.folder=/root/c4-dataset/extract/
+c4.file.path=/root/c4_dataset/c4/extracted_file/c4-train.00000-of-01024.json
+c4.source.folder.folder=/root/c4_dataset/c4/en/
+c4.extract.folder=/root/c4_dataset/c4/extracted_file/
 
 
 #redis
