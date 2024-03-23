@@ -1,5 +1,6 @@
 import com.data.LoadDataEngine;
 import com.data.RedisManager;
+import com.data.TestData;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
 import org.example.monitor.MonitorImpl;
@@ -36,6 +37,8 @@ public class Main {
                 break;
             case "LOAD_ALL_C4":
                 LoadDataEngine.assignWorkAndStart();
+            case "TEST_DATA":
+                TestData.test();
                 break;
             default:
                 break;
