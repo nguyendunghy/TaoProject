@@ -36,7 +36,7 @@ public class LoadDataRunner implements Runnable {
             String extractedFileName = TARGET_FILE_TEMPLATE.replace("${index}", buildIndex(fileIndex));
 
             String sourceFilePath = PropertyUtils.getProperty("c4.source.folder.folder") + sourceFileName;
-            String targetFilePath = PropertyUtils.getProperty("c4.extract.folder=") + extractedFileName;
+            String targetFilePath = PropertyUtils.getProperty("c4.extract.folder") + extractedFileName;
             extract(sourceFilePath, targetFilePath);
             RedisManager.load(targetFilePath);
             deleteFile(targetFilePath);
@@ -88,9 +88,10 @@ public class LoadDataRunner implements Runnable {
     }
 
     public static void main(String[] args) {
-        extract("/Users/nannan/Downloads/c4-train.00000-of-01024.json.gz",
-                "/Users/nannan/Downloads/c4-train.00000-of-01024.json");
+//        extract("/Users/nannan/Downloads/c4-train.00000-of-01024.json.gz",
+//                "/Users/nannan/Downloads/c4-train.00000-of-01024.json");
 
 //        deleteFile("/Users/nannan/Downloads/c4-train.00000-of-01024.json");
+        System.out.println(buildIndex(100));
     }
 }
