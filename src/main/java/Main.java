@@ -38,7 +38,7 @@ public class Main {
             case "LOAD_ALL_C4":
                 LoadDataEngine.assignWorkAndStart();
             case "TEST_DATA":
-                TestData.test();
+                TestData.testAll();
                 break;
             default:
                 break;
