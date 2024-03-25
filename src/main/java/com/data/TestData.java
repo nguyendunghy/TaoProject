@@ -51,6 +51,44 @@ public class TestData {
         }
     }
 
+    public static void count(){
+        String filePath =  PropertyUtils.getProperty("c4.file.path");
+        logger.info("start test data: " + filePath);
+        long start = System.currentTimeMillis();
+        File file = new File(filePath);
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            long wordCount = 0;
+            long lineCount = 0;
+            long minWord = Long.MAX_VALUE;
+            long maxWord = Long.MIN_VALUE;
+            while ((line = reader.readLine()) != null) {
+                DataEntity entity = objectMapper.readValue(line, DataEntity.class);
+                //logger.info("entity.getText: " + entity.getText());
+                long timeCheckExistStart = System.nanoTime();
+                String text = entity.getText();
+                String[] words = text.split(" ");
+                minWord = minWord < words.length ? minWord:words.length;
+                maxWord = maxWord > words.length ? maxWord: words.length;
+                wordCount += words.length;
+                lineCount ++;
+                long timeCheckExistEnd = System.nanoTime();
+                logger.info("Time process in count function: " + (timeCheckExistEnd - timeCheckExistStart));
+            }
+            logger.info("wordCount: " + wordCount);
+            logger.info("lineCount: " + lineCount);
+            logger.info("Average word: " + (wordCount/lineCount));
+            logger.info("minWord: " + minWord);
+            logger.info("maxWord: " + maxWord);
+            logger.info("end count data success:" + filePath);
+        } catch (Exception e) {
+            logger.error("test data error: ", e);
+        } finally {
+            long end = System.currentTimeMillis();
+            logger.info("Time count: " + (end - start));
+        }
+    }
+
 
     public static void testAll() {
         String filePath = PropertyUtils.getProjectLocation() + PropertyUtils.getProperty("c4.validator.data");
@@ -99,6 +137,10 @@ public class TestData {
         long end = System.nanoTime();
         logger.info("Time checkDataExists nano: " + (end - start));
         return results;
+    }
+
+    public static void main(String[] args) {
+        count();
     }
 
 }
