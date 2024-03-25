@@ -98,26 +98,43 @@ public class TestData {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             long sentenceCount = 0;
-            long lineCount = 0;
+            long wordCount = 0;
+            long recordCount = 0;
             long minSentence = Long.MAX_VALUE;
             long maxSentence = Long.MIN_VALUE;
+
+            long maxWordPerSentence = Long.MIN_VALUE;
+            long minWordPerSentence = Long.MAX_VALUE;
             while ((line = reader.readLine()) != null) {
                 DataEntity entity = objectMapper.readValue(line, DataEntity.class);
                 long timeCheckExistStart = System.nanoTime();
                 String text = entity.getText();
                 String[] sentences = text.split("(\\.|\\?|\\!)");
+                for(String sentence: sentences){
+                    String[] words = sentence.split(" ");
+                    maxWordPerSentence = maxWordPerSentence > words.length ? maxWordPerSentence: words.length;
+                    minWordPerSentence = minWordPerSentence < words.length ? minWordPerSentence: words.length;
+                    wordCount += words.length;
+                }
+
                 minSentence = minSentence < sentences.length ? minSentence:sentences.length;
                 maxSentence = maxSentence > sentences.length ? maxSentence: sentences.length;
                 sentenceCount += sentences.length;
-                lineCount ++;
+                recordCount ++;
                 long timeCheckExistEnd = System.nanoTime();
-                logger.info("Time process in count function: " + (timeCheckExistEnd - timeCheckExistStart));
+                //logger.info("Time process in count function: " + (timeCheckExistEnd - timeCheckExistStart));
             }
+
             logger.info("sentenceCount: " + sentenceCount);
-            logger.info("lineCount: " + lineCount);
-            logger.info("Average sentence: " + (sentenceCount/lineCount));
+
+            logger.info("lineCount: " + recordCount);
+            logger.info("Average sentence/record: " + (sentenceCount/recordCount));
             logger.info("minSentence: " + minSentence);
             logger.info("maxSentence: " + maxSentence);
+
+            logger.info("wordCount: " + wordCount);
+            logger.info("Average word/sentence: " + wordCount/sentenceCount);
+
             logger.info("end count data success:" + filePath);
         } catch (Exception e) {
             logger.error("test data error: ", e);
