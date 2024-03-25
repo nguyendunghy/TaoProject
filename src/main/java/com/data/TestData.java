@@ -131,8 +131,11 @@ public class TestData {
             logger.info("Average sentence/record: " + (sentenceCount/recordCount));
             logger.info("minSentence: " + minSentence);
             logger.info("maxSentence: " + maxSentence);
-
+            logger.info("==========================");
+            logger.info("maxWordPerSentence: " + maxWordPerSentence);
+            logger.info("minWordPerSentence: " + minWordPerSentence);
             logger.info("wordCount: " + wordCount);
+
             logger.info("Average word/sentence: " + wordCount/sentenceCount);
 
             logger.info("end count data success:" + filePath);
