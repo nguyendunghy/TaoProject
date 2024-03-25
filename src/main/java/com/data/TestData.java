@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestData {
@@ -51,7 +52,7 @@ public class TestData {
         }
     }
 
-    public static void count(){
+    public static void countWords(){
         String filePath =  PropertyUtils.getProperty("c4.file.path");
         logger.info("start test data: " + filePath);
         long start = System.currentTimeMillis();
@@ -80,6 +81,43 @@ public class TestData {
             logger.info("Average word: " + (wordCount/lineCount));
             logger.info("minWord: " + minWord);
             logger.info("maxWord: " + maxWord);
+            logger.info("end count data success:" + filePath);
+        } catch (Exception e) {
+            logger.error("test data error: ", e);
+        } finally {
+            long end = System.currentTimeMillis();
+            logger.info("Time count: " + (end - start));
+        }
+    }
+
+    public static void countSentence(){
+        String filePath =  PropertyUtils.getProperty("c4.file.path");
+        logger.info("start test data: " + filePath);
+        long start = System.currentTimeMillis();
+        File file = new File(filePath);
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            long sentenceCount = 0;
+            long lineCount = 0;
+            long minSentence = Long.MAX_VALUE;
+            long maxSentence = Long.MIN_VALUE;
+            while ((line = reader.readLine()) != null) {
+                DataEntity entity = objectMapper.readValue(line, DataEntity.class);
+                long timeCheckExistStart = System.nanoTime();
+                String text = entity.getText();
+                String[] sentences = text.split("(\\.|\\?|\\!)");
+                minSentence = minSentence < sentences.length ? minSentence:sentences.length;
+                maxSentence = maxSentence > sentences.length ? maxSentence: sentences.length;
+                sentenceCount += sentences.length;
+                lineCount ++;
+                long timeCheckExistEnd = System.nanoTime();
+                logger.info("Time process in count function: " + (timeCheckExistEnd - timeCheckExistStart));
+            }
+            logger.info("sentenceCount: " + sentenceCount);
+            logger.info("lineCount: " + lineCount);
+            logger.info("Average sentence: " + (sentenceCount/lineCount));
+            logger.info("minSentence: " + minSentence);
+            logger.info("maxSentence: " + maxSentence);
             logger.info("end count data success:" + filePath);
         } catch (Exception e) {
             logger.error("test data error: ", e);
@@ -140,7 +178,9 @@ public class TestData {
     }
 
     public static void main(String[] args) {
-        count();
+        String text = "abc.def?mnp!ksg.exy";
+        String[] sentences = text.split("(\\.|\\?|\\!)");
+        System.out.println(Arrays.asList(sentences));
     }
 
 }
