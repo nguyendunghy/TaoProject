@@ -1,10 +1,10 @@
 
-max.register.price.1=0
-max.register.price.2=0
-max.register.price.3=0
-max.register.price.4=0
-max.register.price.6=0
-max.register.price.26=0.3
+#max.register.price.1=0
+#max.register.price.2=0
+#max.register.price.3=0
+#max.register.price.4=0
+#max.register.price.6=0
+#max.register.price.26=0.3
 max.register.price.32=0.45
 
 #subnetId seperator is comma
