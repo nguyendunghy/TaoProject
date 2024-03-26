@@ -5,11 +5,11 @@ max.register.price.3=0
 max.register.price.4=0
 max.register.price.6=0
 max.register.price.26=0.3
-max.register.price.32=0.1
+max.register.price.32=0.4
 
 #subnetId seperator is comma
 register.subnetId=32
-register.hotkey=jackie_hotkey_24
+register.hotkey=jackie_hotkey_25,jackie_hotkey_26,jackie_hotkey_27
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
