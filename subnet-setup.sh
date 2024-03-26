@@ -12,8 +12,8 @@ nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey
 
 nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_25 --logging.debug --neuron.device cuda:0 --axon.port 8888  --axon.external_port 41755 --subtensor.network finney --blacklist.force_validator_permit true >> jackie_hotkey_25.log &
 
+nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_26 --logging.debug --neuron.device cuda:0 --axon.port 6006  --axon.external_port 42116 --subtensor.network finney --blacklist.force_validator_permit true >> jackie_hotkey_26.log &
 
-#mainnet fail
 
 #nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_22 --logging.debug --neuron.device cuda:0 --axon.port 2023 --subtensor.chain_endpoint ws://3.144.223.133:9944 --blacklist.force_validator_permit true >> hotkey22_output.log &
 
