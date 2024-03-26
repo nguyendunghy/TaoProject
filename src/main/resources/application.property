@@ -9,7 +9,7 @@ max.register.price.32=0.45
 
 #subnetId seperator is comma
 register.subnetId=32
-register.hotkey=jackie_hotkey_25,jackie_hotkey_26,jackie_hotkey_27
+register.hotkey=jackie_hotkey_26,jackie_hotkey_27
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
