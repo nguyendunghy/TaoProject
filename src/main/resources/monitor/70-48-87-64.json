@@ -1,0 +1,14 @@
+{
+  "ip": "70.48.87.64",
+  "threadConfigs": [
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/TaoProject",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_24",
+      "logFilePath": "/root/llm-detection/jackie_hotkey_24.log",
+      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_24 ip:70.48.87.64 die"
+    }
+  ],
+  "timeSleep": 30
+}
