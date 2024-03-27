@@ -5,9 +5,9 @@
       "command": "ps -ef|grep python",
       "location": "/root/TaoProject",
       "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_25",
-      "logFilePath": "/root/true-false-5050-llm-dectection/jackie_hotkey_25.log",
-      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_25 ip:213.181.123.100 die"
+      "checkedString": "jackie_hotkey_26",
+      "logFilePath": "/root/true-false-5050-llm-dectection/jackie_hotkey_26.log",
+      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_26 ip:213.181.123.100 die"
     }
   ],
   "timeSleep": 30
