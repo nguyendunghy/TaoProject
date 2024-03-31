@@ -1,7 +1,7 @@
 #subnetId seperator is comma
 register.subnetId=29
 max.register.price.29=0.15
-register.hotkey=jackie_hotkey_20,jackie_hotkey_21,jackie_hotkey_22,jackie_hotkey_23,jackie_hotkey_24
+register.hotkey=jackie_hotkey_21,jackie_hotkey_22,jackie_hotkey_23,jackie_hotkey_24
 
 
 #project location
