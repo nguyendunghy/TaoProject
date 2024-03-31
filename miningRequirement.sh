@@ -31,7 +31,7 @@ pip install torch torchvision --upgrade
 
 
 #install new driver
-cd ..
-sudo curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run
-sudo chmod 777 NVIDIA-Linux-x86_64-550.54.14.run
-sudo ./NVIDIA-Linux-x86_64-550.54.14.run
+#cd ..
+#sudo curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run
+#sudo chmod 777 NVIDIA-Linux-x86_64-550.54.14.run
+#sudo ./NVIDIA-Linux-x86_64-550.54.14.run
