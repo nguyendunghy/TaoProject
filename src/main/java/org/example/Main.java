@@ -4,6 +4,8 @@ import org.example.utils.SystemUtils;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("============================================================================================================");
+
         try {
             System.out.println("Public IP address : " + SystemUtils.getPublicIp());
         } catch (Exception e) {
