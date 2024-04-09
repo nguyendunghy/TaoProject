@@ -4,3 +4,4 @@ sudo apt-get install expect
 sudo apt-get install maven
 sudo apt install python3-pip
 sudo apt install python3.10-venv
+sudo apt-get install git-lfs
