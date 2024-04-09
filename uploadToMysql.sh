@@ -8,7 +8,7 @@ HOST="localhost"
 PORT=3306
 TABLE_NAME="table_10000"
 # Directory containing your CSV files
-CSV_DIR="/home/ubuntu/mysql/processed_data"
+CSV_DIR="/var/lib/mysql-files"
 
 # Loop through each CSV file in the directory
 for CSV_FILE in $CSV_DIR/*.csv; do
