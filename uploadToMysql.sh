@@ -23,7 +23,7 @@ for CSV_FILE in $CSV_DIR/*.csv; do
            IGNORE 0 ROWS;"
   
   # Execute the command
-  nohup time -f "%e seconds" mysql -u$USER -p$PASSWORD -h$HOST $DATABASE -e "$SQL_CMD" > "$CSV_DIR/logs/$TABLE_NAME.log" &
+  nohup time -f "%e seconds" mysql -u$USER -p$PASSWORD -h$HOST $DATABASE -e "$SQL_CMD"  &
   
   echo "Data from $CSV_FILE uploaded to $TABLE_NAME"
 done
