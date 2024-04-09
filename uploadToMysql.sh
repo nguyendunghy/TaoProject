@@ -6,14 +6,13 @@ PASSWORD="jackie_password"
 DATABASE="ai_generated_text"
 HOST="localhost"
 PORT=3306
-TABLE_NAME="table_10000"
 # Directory containing your CSV files
 CSV_DIR="/var/lib/mysql-files"
 
 # Loop through each CSV file in the directory
 for CSV_FILE in $CSV_DIR/*.csv; do
   # Extract the table name from the file name (removing path and .csv extension)
-#  TABLE_NAME=$(basename "$CSV_FILE" .csv)
+  TABLE_NAME=$(basename "$CSV_FILE" .csv)
   
   # Construct the MySQL LOAD DATA INFILE command
   SQL_CMD="LOAD DATA INFILE '"$CSV_FILE"'
@@ -24,7 +23,7 @@ for CSV_FILE in $CSV_DIR/*.csv; do
            IGNORE 0 ROWS;"
   
   # Execute the command
-  mysql -u$USER -p$PASSWORD -h$HOST $DATABASE -e "$SQL_CMD"
+  nohup mysql -u$USER -p$PASSWORD -h$HOST $DATABASE -e "$SQL_CMD" &
   
   echo "Data from $CSV_FILE uploaded to $TABLE_NAME"
 done
