@@ -6,8 +6,10 @@ PASSWORD="jackie_password"
 DATABASE="ai_generated_text"
 HOST="localhost"
 PORT=3306
+groupId=$1
+
 # Directory containing your CSV files
-CSV_DIR="/var/lib/mysql-files/group-0"
+CSV_DIR="/var/lib/mysql-files/group-$groupId"
 
 # Loop through each CSV file in the directory
 for CSV_FILE in $CSV_DIR/table*.csv; do
