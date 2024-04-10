@@ -4,7 +4,7 @@
 C4_INDEX="/home/ubuntu/c4-dataset/c4-index-v1"
 
 # Loop through each CSV file in the directory
-for dir in C4_INDEX/*; do
+for dir in $C4_INDEX/*; do
   # Extract the table name from the file name (removing path and .csv extension)
   dir_name=$(basename "$dir")
   cd $dir
