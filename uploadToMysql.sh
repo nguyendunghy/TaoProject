@@ -7,10 +7,10 @@ DATABASE="ai_generated_text"
 HOST="localhost"
 PORT=3306
 # Directory containing your CSV files
-CSV_DIR="/var/lib/mysql-files/group-0/"
+CSV_DIR="/var/lib/mysql-files/group-0"
 
 # Loop through each CSV file in the directory
-for CSV_FILE in $CSV_DIR/*.csv; do
+for CSV_FILE in $CSV_DIR/table*.csv; do
   # Extract the table name from the file name (removing path and .csv extension)
   TABLE_NAME=$(basename "$CSV_FILE" .csv)
   
