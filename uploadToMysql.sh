@@ -7,7 +7,7 @@ DATABASE="ai_generated_text"
 HOST="localhost"
 PORT=3306
 # Directory containing your CSV files
-CSV_DIR="/var/lib/mysql-files/group-0"
+CSV_DIR="/var/lib/mysql-files/group-0/"
 
 # Loop through each CSV file in the directory
 for CSV_FILE in $CSV_DIR/*.csv; do
