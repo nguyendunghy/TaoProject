@@ -33,7 +33,7 @@ public class MonitorImpl implements Monitor {
 
     @Override
     public String getIpAddress() throws Exception {
-        return SystemUtils.getIpAddress();
+        return SystemUtils.getPublicIp();
     }
 
     @Override
