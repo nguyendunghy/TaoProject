@@ -1,0 +1,14 @@
+{
+  "ip": "75.63.212.228",
+  "threadConfigs": [
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_22",
+      "logFilePath": "/root/head-tail-llm-detection/miner_jackie_hotkey_22.log",
+      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_22 ip:75.63.212.228 die"
+    }
+  ],
+  "timeSleep": 30
+}
