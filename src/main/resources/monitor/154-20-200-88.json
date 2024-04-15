@@ -1,0 +1,14 @@
+{
+  "ip": "154.20.200.88",
+  "threadConfigs": [
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "model_api_controller.py",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Testing model api at ip:154.20.200.88 die"
+    }
+  ],
+  "timeSleep": 30
+}

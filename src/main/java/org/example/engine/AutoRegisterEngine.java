@@ -1,5 +1,6 @@
 package org.example.engine;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.telegram.TeleGramMessageSender;
 import org.example.utils.PropertyUtils;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import static org.example.script.RunShellScript.register;
 import static org.example.utils.Constants.MAX_REGISTER_PRICE_MAP;
 
+@Slf4j
 public class AutoRegisterEngine {
 
     private String subnetId;
@@ -46,14 +48,14 @@ public class AutoRegisterEngine {
             try {
                 String hotkey = getHotKey();
                 if(hotkey == null || hotkey.isEmpty()){
-                    System.out.println("No hotkey to register!!!");
+                    log.info("No hotkey to register!!!");
                     break;
                 }
 
                 Double maxRegisterPrice = MAX_REGISTER_PRICE_MAP.get(subnetId);
                 String registerSubnetScriptPath = PropertyUtils.registerSubnetScriptPath();
                 String output = register(registerSubnetScriptPath, subnetId, maxRegisterPrice.toString(), hotkey);
-                System.out.println(output);
+                log.info(output);
                 if (output.contains("Registered") && !output.contains("Already Registered")) {
                     registeredHotKeyList.add(hotkey);
                     String telegramChannelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");

@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
 import org.example.monitor.MonitorImpl;
@@ -8,12 +9,13 @@ import org.example.utils.PropertyUtils;
 
 import java.util.Arrays;
 
+@Slf4j
 public class Main {
     public static void main(String[] args) {
 //        args = new String[]{"MONITOR", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
 
         if (args == null || args.length < 2) {
-            System.out.println("Missing argument, the first argument is GET_PRICE,AUTO_REGISTER or MONITOR. The second argument is property file path");
+            log.info("Missing argument, the first argument is GET_PRICE,AUTO_REGISTER or MONITOR. The second argument is property file path");
         }
         Constants.CONFIG_FILE = args[1];
         String[] subnetIdArray;

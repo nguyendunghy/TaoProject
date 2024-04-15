@@ -1,8 +1,10 @@
 package org.example.monitor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.example.monitor.config.MonitorConfig;
 import org.example.monitor.config.ThreadConfig;
+import org.example.report.ReportingApi;
 import org.example.script.RunShellScript;
 import org.example.telegram.TeleGramMessageSender;
 import org.example.utils.Constants;
@@ -15,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 public class MonitorImpl implements Monitor {
     private ObjectMapper objectMapper = new ObjectMapper();
     MonitorConfig monitorConfig = new MonitorConfig();
@@ -23,7 +26,7 @@ public class MonitorImpl implements Monitor {
         try {
             initMonitorConfigFromFile();
             if (monitorConfig.getIp() == null || !monitorConfig.getIp().equals(getIpAddress())) {
-                System.out.println("Ip address not correct " + monitorConfig.getIp() + ":" + getIpAddress());
+                log.info("Ip address not correct " + monitorConfig.getIp() + ":" + getIpAddress());
                 System.exit(1);
             }
         } catch (Exception e) {
@@ -69,7 +72,7 @@ public class MonitorImpl implements Monitor {
     @Override
     public String doAction(List<String> issueList) {
         if(issueList == null || issueList.isEmpty()){
-            System.out.println("All good, no issue !");
+            log.info("All good, no issue !");
             return "SUCCESS";
         }
 
@@ -85,9 +88,16 @@ public class MonitorImpl implements Monitor {
     public void run() {
         while (true) {
             try {
+                //Report server is alive
+                //Time sleep must be less than checking interval time in service ServerMonitorManager
+                String[] urls = PropertyUtils.getProperty("report.url").split(",");
+                String publicIp = getIpAddress();
+                ReportingApi.report(urls,publicIp);
+
                 Map<ThreadConfig, String> info = getInfo();
                 List<String> listIssue = findIssue(info);
                 doAction(listIssue);
+
                 Thread.sleep(this.monitorConfig.getTimeSleep() * 1000);
 
             } catch (Exception e) {

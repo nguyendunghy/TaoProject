@@ -1,8 +1,11 @@
 package org.example.utils;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+@Slf4j
 public class StringUtils {
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
 
@@ -16,7 +19,7 @@ public class StringUtils {
                 price = strArray[strArray.length - 1].split("τ")[2].split(" ")[0].trim();
                 return price;
             } catch (Exception ex) {
-                System.out.println(ex.getMessage());
+                log.info(ex.getMessage());
             }
         }
 
@@ -24,29 +27,29 @@ public class StringUtils {
             price = strArray[7].split("τ")[1].split(" ")[0].trim();
             return price;
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
         }
 
         try {
             price = strArray[3].split("τ")[1].trim();
             return price;
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
         }
 
         try {
             price = strArray[7].split("τ")[1].trim();
             return price;
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            log.info(ex.getMessage());
         }
 
         try {
             price = strArray[strArray.length - 1].split(" ")[0].split("τ")[1].trim();
             return price;
         } catch (Exception ex) {
-            System.out.println("input: " + input);
-            System.out.println(ex.getMessage());
+            log.info("input: " + input);
+            log.info(ex.getMessage());
             throw ex;
         }
 

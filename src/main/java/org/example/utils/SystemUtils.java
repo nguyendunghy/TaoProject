@@ -1,5 +1,7 @@
 package org.example.utils;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
@@ -7,6 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.URL;
 
+@Slf4j
 public class SystemUtils {
 
     public static String getIpAddress() throws Exception {
@@ -14,7 +17,7 @@ public class SystemUtils {
 
         String ipAddress = inetAddress.getHostAddress();
 
-        System.out.println("IP Address of the running server: " + ipAddress);
+        log.info("IP Address of the running server: " + ipAddress);
         return ipAddress;
     }
 
