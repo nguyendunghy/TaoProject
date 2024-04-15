@@ -18,6 +18,7 @@ public class PropertyUtils {
     static {
         loadProperties();
         MAX_REGISTER_PRICE_MAP = buildMaxRegisterPriceMap();
+        PROJECT_LOCATION = getProjectLocation();
     }
 
     private static void loadProperties() {
@@ -51,7 +52,7 @@ public class PropertyUtils {
     public static String getProjectLocation() {
         try {
             String ip = SystemUtils.getIpAddress();
-            String key = ip + "..project.location";
+            String key = ip + ".project.location";
             return getProperty(key);
         } catch (Exception e) {
             throw new RuntimeException(e);
