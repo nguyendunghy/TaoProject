@@ -49,6 +49,7 @@ public class AutoRegisterEngine {
                     System.out.println("No hotkey to register!!!");
                     break;
                 }
+                System.out.println("start register hotkey: " + hotkey);
 
                 Double maxRegisterPrice = MAX_REGISTER_PRICE_MAP.get(subnetId);
                 String registerSubnetScriptPath = PropertyUtils.registerSubnetScriptPath();
@@ -59,9 +60,10 @@ public class AutoRegisterEngine {
                     String telegramChannelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
                     TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId + " hotkey: " + hotkey);
                 }
-                Thread.sleep(500);
             } catch (Exception ex) {
                 ex.printStackTrace();
+            }finally {
+                System.out.println("Finish register !");
             }
         }
     }
@@ -69,8 +71,13 @@ public class AutoRegisterEngine {
 
     private String getHotKey(){
         String hotkeyValue = PropertyUtils.getProperty("register.hotkey");
-        List<String> hotKeyList = Arrays.asList(hotkeyValue.split(","));
-        hotKeyList.removeAll(registeredHotKeyList);
+        List<String> temp_list = Arrays.asList(hotkeyValue.split(","));
+        List<String> hotKeyList = new ArrayList<>();
+        for (String key: temp_list){
+            if(!registeredHotKeyList.contains(key)){
+                hotKeyList.add(key);
+            }
+        }
         if(hotKeyList.isEmpty()){
             return "";
         }
