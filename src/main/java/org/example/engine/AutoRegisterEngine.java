@@ -71,8 +71,13 @@ public class AutoRegisterEngine {
 
     private String getHotKey(){
         String hotkeyValue = PropertyUtils.getProperty("register.hotkey");
-        List<String> hotKeyList = Arrays.asList(hotkeyValue.split(","));
-        hotKeyList.removeAll(registeredHotKeyList);
+        List<String> temp_list = Arrays.asList(hotkeyValue.split(","));
+        List<String> hotKeyList = new ArrayList<>();
+        for (String key: temp_list){
+            if(!registeredHotKeyList.contains(key)){
+                hotKeyList.add(key);
+            }
+        }
         if(hotKeyList.isEmpty()){
             return "";
         }
