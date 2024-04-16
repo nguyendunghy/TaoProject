@@ -1,5 +1,5 @@
 {
-  "ip": "69.67.150.21",
+  "ip": "103.219.170.221",
   "threadConfigs": [
     {
       "command": "ps -ef|grep redis",
@@ -7,7 +7,7 @@
       "operator": "NOT_CONTAIN",
       "checkedString": "redis-server",
       "logFilePath": "/var/log/redis/redis-server.log",
-      "message": "Redis instance in server ip: 69.67.150.21 is down"
+      "message": "Redis instance in server ip: 103.219.170.221 is down"
     }
   ],
   "timeSleep": 30
