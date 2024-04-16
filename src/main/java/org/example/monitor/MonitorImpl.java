@@ -101,7 +101,7 @@ public class MonitorImpl implements Monitor {
                 Thread.sleep(this.monitorConfig.getTimeSleep() * 1000);
 
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("error:", e);
             }
         }
     }

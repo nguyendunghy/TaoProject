@@ -50,8 +50,8 @@ public class PropertyUtils {
 
     public static String getProjectLocation() {
         try {
-            String ip = SystemUtils.getIpAddress();
-            String key = ip + "..project.location";
+            String ip = SystemUtils.getPublicIp();
+            String key = ip + ".project.location";
             return getProperty(key);
         } catch (Exception e) {
             throw new RuntimeException(e);
