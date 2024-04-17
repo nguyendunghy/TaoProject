@@ -20,6 +20,10 @@ nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey
 
 nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_22 --logging.debug --neuron.device cuda:0 --axon.port 7101 --axon.external_port  44416 --subtensor.network finney   >> miner_jackie_hotkey_22.log &
 nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_23 --logging.debug --neuron.device cuda:0 --axon.port 7102 --axon.external_port  44316 --subtensor.network finney   >> miner_jackie_hotkey_23.log &
+#213.181.122.2:44224 -> 7103/tcp
+
+nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_21 --logging.debug --neuron.device cuda:0 --axon.port 7103 --axon.external_port  44224 --subtensor.network finney   >> miner_jackie_hotkey_21.log &
+
 
 
 nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_21 --logging.debug --neuron.device cuda:0 --axon.port 7100 --subtensor.network finney  >> miner_hotkey_21.log &
