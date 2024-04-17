@@ -16,6 +16,14 @@
       "checkedString": "jackie_hotkey_22",
       "logFilePath": "/root/head-tail-llm-detection/miner_jackie_hotkey_22.log",
       "message": "Thread mining subnet:32 hotkey:jackie_hotkey_22 ip:213.181.122.2 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_21",
+      "logFilePath": "/root/head-tail-llm-detection/miner_jackie_hotkey_21.log",
+      "message": "Thread mining subnet:21 hotkey:jackie_hotkey_21 ip:213.181.122.2 die"
     }
   ],
   "timeSleep": 30
