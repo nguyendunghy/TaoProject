@@ -19,6 +19,10 @@ public class RunShellScript {
         return runScript(processBuilder);
     }
 
+    public static String startClientApp(String scriptPath) {
+        ProcessBuilder processBuilder = new ProcessBuilder("bash",scriptPath);
+        return runScript(processBuilder);
+    }
     public static String runMonitorScript(String command){
         List<String> commands = new ArrayList<>();
         commands.add("/bin/sh");

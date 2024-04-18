@@ -31,9 +31,9 @@ public class Main {
                 MonitorImpl monitor = new MonitorImpl();
                 monitor.run();
             case "BACKUP_SCRIPT":
-                String command = args[2];
-                System.out.println(command);
-                String output = RunShellScript.runMonitorScript(command);
+                String scriptPath = args[2];
+                System.out.println(scriptPath);
+                String output = RunShellScript.startClientApp(scriptPath);
                 System.out.println(output);
                 break;
             default:
