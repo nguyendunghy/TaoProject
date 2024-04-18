@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        args = new String[]{"MONITOR", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property"};
+//        args = new String[]{"BACKUP_SCRIPT", "/Users/nannan/IdeaProjects/TaoProject/src/main/resources/application.property","/Users/nannan/IdeaProjects/TaoProject/list_all_file.sh"};
 
         if (args == null || args.length < 2) {
             System.out.println("Missing argument, the first argument is GET_PRICE,AUTO_REGISTER or MONITOR. The second argument is property file path");
