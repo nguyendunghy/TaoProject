@@ -36,6 +36,11 @@ nohup python3 neurons/miner.py --netuid 87 --wallet.name default --wallet.hotkey
 nohup python3 neurons/miner.py --netuid 87 --wallet.name default --wallet.hotkey jackie_hotkey_22 --logging.debug --neuron.device cuda:0 --axon.port 7100  --subtensor.network test --blacklist.minimum_stake_requirement 0 >> miner_hotkey_22.log &
 
 
+#Test on datacrunch
+nohup python3 neurons/miner.py --netuid 87 --wallet.name default --wallet.hotkey jackie_hotkey_23 --logging.debug --neuron.device cuda:0 --axon.port 7100  --subtensor.network test --blacklist.minimum_stake_requirement 0 >> miner_hotkey_23.log &
+
+
+
 #nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_22 --logging.debug --neuron.device cuda:0 --axon.port 2023 --subtensor.chain_endpoint ws://3.144.223.133:9944 --blacklist.force_validator_permit true >> hotkey22_output.log &
 
 #nohup python3 neurons/miner.py --netuid 32 --wallet.name default --wallet.hotkey jackie_hotkey_23 --logging.debug --neuron.device cuda:0 --axon.port 1992 --subtensor.chain_endpoint ws://3.144.223.133:9944 --blacklist.force_validator_permit true  >> hotkey23_output.log &

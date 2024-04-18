@@ -132,7 +132,9 @@ public class RunShellScript {
         return path.substring(0, index);
     }
     public static void main(String[] args) {
-        System.out.println(runMonitorScript("ps -ef|grep java"));
+        String command = "nohup python3 neurons/miner.py --netuid 87 --wallet.name default --wallet.hotkey jackie_hotkey_23 --logging.debug --neuron.device cuda:0 --axon.port 7101  --subtensor.network test --blacklist.minimum_stake_requirement 0 >> miner_hotkey_23.log &";
+
+        System.out.println(runMonitorScript(command));
     }
 
 }

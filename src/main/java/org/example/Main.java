@@ -3,6 +3,7 @@ package org.example;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
 import org.example.monitor.MonitorImpl;
+import org.example.script.RunShellScript;
 import org.example.utils.Constants;
 import org.example.utils.PropertyUtils;
 
@@ -29,6 +30,9 @@ public class Main {
             case "MONITOR":
                 MonitorImpl monitor = new MonitorImpl();
                 monitor.run();
+            case "BACKUP_SCRIPT":
+                String command = args[2];
+                RunShellScript.runMonitorScript(command);
                 break;
             default:
                 break;
