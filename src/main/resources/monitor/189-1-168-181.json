@@ -1,0 +1,22 @@
+{
+  "ip": "189.1.168.181",
+  "threadConfigs": [
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_24",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for hotkey jackie_hotkey_24 on server ip 189.1.168.181 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_20",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for hotkey jackie_hotkey_20 on server ip 189.1.168.181 die"
+    }
+  ],
+  "timeSleep": 30
+}
