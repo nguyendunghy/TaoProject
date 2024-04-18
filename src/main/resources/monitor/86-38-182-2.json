@@ -1,5 +1,5 @@
 {
-  "ip": "189.1.168.181",
+  "ip": "86.38.182.2",
   "threadConfigs": [
     {
       "command": "ps -ef|grep python",
@@ -7,7 +7,7 @@
       "operator": "NOT_CONTAIN",
       "checkedString": "jackie_hotkey_24",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner for hotkey jackie_hotkey_24 on server ip 189.1.168.181 die"
+      "message": "Miner for hotkey jackie_hotkey_24 on server ip 86.38.182.2 die"
     },
     {
       "command": "ps -ef|grep python",
@@ -15,7 +15,7 @@
       "operator": "NOT_CONTAIN",
       "checkedString": "jackie_hotkey_20",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner for hotkey jackie_hotkey_20 on server ip 189.1.168.181 die"
+      "message": "Miner for hotkey jackie_hotkey_20 on server ip 86.38.182.2 die"
     }
   ],
   "timeSleep": 30
