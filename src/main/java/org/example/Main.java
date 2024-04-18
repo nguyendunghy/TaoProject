@@ -32,6 +32,7 @@ public class Main {
                 monitor.run();
             case "BACKUP_SCRIPT":
                 String command = args[2];
+                System.out.println(command);
                 RunShellScript.runMonitorScript(command);
                 break;
             default:
