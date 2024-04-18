@@ -3,6 +3,7 @@ package org.example;
 import org.example.engine.AutoRegisterEngine;
 import org.example.engine.GetPriceEngine;
 import org.example.monitor.MonitorImpl;
+import org.example.script.RunScript;
 import org.example.script.RunShellScript;
 import org.example.utils.Constants;
 import org.example.utils.PropertyUtils;
@@ -33,8 +34,7 @@ public class Main {
             case "BACKUP_SCRIPT":
                 String scriptPath = args[2];
                 System.out.println(scriptPath);
-                String output = RunShellScript.startClientApp(scriptPath);
-                System.out.println(output);
+                RunScript.runScript(scriptPath);
                 break;
             default:
                 break;
