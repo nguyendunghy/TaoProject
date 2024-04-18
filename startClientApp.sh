@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing the command files
-COMMAND_DIR="/Users/nannan/IdeaProjects/TaoProject/script"
+COMMAND_DIR="/home/ubuntu/TaoProject/script"
 
 # Check if the directory exists
 if [ ! -d "$COMMAND_DIR" ]; then
