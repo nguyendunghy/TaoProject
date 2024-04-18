@@ -117,6 +117,8 @@ public class RunShellScript {
             while ((line = reader.readLine()) != null) {
                 output.append(line).append("\n");
             }
+            int exitCode = process.waitFor();
+            System.out.println("\nExited with error code : " + exitCode);
 
             return output.toString();
 
