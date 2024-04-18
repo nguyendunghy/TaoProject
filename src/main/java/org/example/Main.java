@@ -33,7 +33,8 @@ public class Main {
             case "BACKUP_SCRIPT":
                 String command = args[2];
                 System.out.println(command);
-                RunShellScript.runMonitorScript(command);
+                String output = RunShellScript.runMonitorScript(command);
+                System.out.println(output);
                 break;
             default:
                 break;
