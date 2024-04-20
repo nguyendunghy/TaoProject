@@ -17,7 +17,9 @@ public class SystemUtils {
         String urlString = "http://checkip.amazonaws.com/";
         URL url = new URL(urlString);
         try (BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()))) {
-            return br.readLine();
+            String ip = br.readLine();
+            System.out.println("getPublicIp: " + ip);
+            return ip;
         }
     }
 
