@@ -9,7 +9,7 @@ max.register.price.32=1
 
 #subnetId seperator is comma
 register.subnetId=32
-register.hotkey=jackie_hotkey_29,jackie_hotkey_30
+register.hotkey=jackie_hotkey_30
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
@@ -19,7 +19,7 @@ get.price.thread.sleep=3000
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
 45.250.255.72.project.location=/home/ubuntu/TaoProject/
-86.38.182.2.project.location=/root/TaoProject/
+135.181.63.197.project.location=/root/TaoProject/
 
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
