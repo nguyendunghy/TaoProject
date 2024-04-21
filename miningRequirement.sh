@@ -5,6 +5,8 @@ pip3 install bittensor
 #setup coldkey and hotkey
 ./install-keys/install-coldkey.sh
 ./install-keys/install-hotkey-all.sh
+./install-keys-2/install-coldkey.sh
+./install-keys-2/install-hotkey-all.sh
 
 #install subtensor
 #cd ..
