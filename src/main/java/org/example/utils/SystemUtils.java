@@ -29,4 +29,8 @@ public class SystemUtils {
             return socket.getLocalAddress().getHostAddress();
         }
     }
+
+    public static void main(String[] args) throws Exception {
+        System.out.println(getPublicIp());
+    }
 }

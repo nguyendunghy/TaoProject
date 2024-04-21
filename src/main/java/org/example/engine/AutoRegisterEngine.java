@@ -59,7 +59,7 @@ public class AutoRegisterEngine {
                 if (output.contains("Registered") && !output.contains("Already Registered")) {
                     registeredHotKeyList.add(hotkey);
                     String telegramChannelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
-                    TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId + " hotkey: " + hotkey);
+                    TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId + " cold key: " + coldKey +  " hotkey: " + hotkey);
                 } else if(output.contains("Already Registered")){
                     registeredHotKeyList.add(hotkey);
                 }
