@@ -12,8 +12,8 @@ public class RunShellScript {
         return runScript(processBuilder);
     }
 
-    public static String register(String scriptPath, String subnetId, String threshold, String hotkey) throws Exception{
-        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, folderOfScript());
+    public static String register(String scriptPath, String subnetId, String threshold, String hotkey, String coldKey) throws Exception{
+        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, coldKey, folderOfScript());
         return runScript(processBuilder);
     }
 

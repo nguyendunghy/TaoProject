@@ -9,6 +9,8 @@ max.register.price.32=0.9
 
 #subnetId seperator is comma
 register.subnetId=32
+#cold key: default, dungngoc
+register.coldkey=default
 register.hotkey=jackie_hotkey_23,jackie_hotkey_22
 
 get.price.subnetId=26,32

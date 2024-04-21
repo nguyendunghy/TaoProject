@@ -3,5 +3,6 @@
 subnetId=$1
 threshold=$2
 hotkey=$3
-cd $4
-./autoRegisterScript.sh $subnetId $threshold default $hotkey
+coldkey=$4
+cd $5
+./autoRegisterScript.sh $subnetId $threshold $coldkey $hotkey

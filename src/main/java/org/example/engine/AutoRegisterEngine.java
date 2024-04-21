@@ -44,6 +44,7 @@ public class AutoRegisterEngine {
     public void run() {
         while (true) {
             try {
+                String coldKey = getColdKey();
                 String hotkey = getHotKey();
                 if(hotkey == null || hotkey.isEmpty()){
                     System.out.println("No hotkey to register!!!");
@@ -53,7 +54,7 @@ public class AutoRegisterEngine {
 
                 Double maxRegisterPrice = MAX_REGISTER_PRICE_MAP.get(subnetId);
                 String registerSubnetScriptPath = PropertyUtils.registerSubnetScriptPath();
-                String output = register(registerSubnetScriptPath, subnetId, maxRegisterPrice.toString(), hotkey);
+                String output = register(registerSubnetScriptPath, subnetId, maxRegisterPrice.toString(), hotkey,coldKey);
                 System.out.println(output);
                 if (output.contains("Registered") && !output.contains("Already Registered")) {
                     registeredHotKeyList.add(hotkey);
@@ -69,7 +70,9 @@ public class AutoRegisterEngine {
             }
         }
     }
-
+    private String getColdKey(){
+        return PropertyUtils.getProperty("register.coldkey");
+    }
 
     private String getHotKey(){
         String hotkeyValue = PropertyUtils.getProperty("register.hotkey");
