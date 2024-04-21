@@ -50,7 +50,7 @@ public class AutoRegisterEngine {
                     System.out.println("No hotkey to register!!!");
                     break;
                 }
-                System.out.println("start register coldKey: " + coldKey + " hotKey: " + hotkey);
+                System.out.println("start register coldKey: " + coldKey + ", hotKey: " + hotkey);
 
                 Double maxRegisterPrice = MAX_REGISTER_PRICE_MAP.get(subnetId);
                 String registerSubnetScriptPath = PropertyUtils.registerSubnetScriptPath();
@@ -59,7 +59,7 @@ public class AutoRegisterEngine {
                 if (output.contains("Registered") && !output.contains("Already Registered")) {
                     registeredHotKeyList.add(hotkey);
                     String telegramChannelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
-                    TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId + " cold key: " + coldKey +  " hotkey: " + hotkey);
+                    TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId + " coldKey: " + coldKey +  ", hotkey: " + hotkey);
                 } else if(output.contains("Already Registered")){
                     registeredHotKeyList.add(hotkey);
                 }
