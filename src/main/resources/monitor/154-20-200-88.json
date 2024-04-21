@@ -5,9 +5,17 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "model_api_controller.py",
+      "checkedString": "model_api_controller.py 8888",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Testing model api at ip:154.20.200.88 die"
+      "message": "model api at ip:154.20.200.88, port 8888 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "model_api_controller.py 6006",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "model api at ip:154.20.200.88, port 6006 die"
     }
   ],
   "timeSleep": 30
