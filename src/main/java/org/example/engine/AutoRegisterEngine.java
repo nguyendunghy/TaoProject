@@ -50,7 +50,7 @@ public class AutoRegisterEngine {
                     System.out.println("No hotkey to register!!!");
                     break;
                 }
-                System.out.println("start register hotkey: " + hotkey);
+                System.out.println("start register coldKey: " + coldKey + " hotKey: " + hotkey);
 
                 Double maxRegisterPrice = MAX_REGISTER_PRICE_MAP.get(subnetId);
                 String registerSubnetScriptPath = PropertyUtils.registerSubnetScriptPath();
