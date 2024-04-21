@@ -1,0 +1,15 @@
+./install-keys-2/public-key/install-hotkey_1.sh
+./install-keys-2/public-key/install-hotkey_2.sh
+./install-keys-2/public-key/install-hotkey_3.sh
+./install-keys-2/public-key/install-hotkey_4.sh
+./install-keys-2/public-key/install-hotkey_5.sh
+./install-keys-2/public-key/install-hotkey_6.sh
+./install-keys-2/public-key/install-hotkey_7.sh
+./install-keys-2/public-key/install-hotkey_8.sh
+./install-keys-2/public-key/install-hotkey_9.sh
+./install-keys-2/public-key/install-hotkey_10.sh
+./install-keys-2/public-key/install-hotkey_11.sh
+./install-keys-2/public-key/install-hotkey_12.sh
+./install-keys-2/public-key/install-hotkey_13.sh
+./install-keys-2/public-key/install-hotkey_14.sh
+./install-keys-2/public-key/install-hotkey_15.sh
