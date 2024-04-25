@@ -80,8 +80,7 @@
       "checkedString": "jackie_hotkey_29",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Miner for hotkey jackie_hotkey_29 on server ip 86.38.182.2 die"
-    }
-  ,
+    },
     {
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
@@ -89,6 +88,38 @@
       "checkedString": "nannan_hotkey_5",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Miner for hotkey nannan_hotkey_5 on server ip 86.38.182.2 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "nannan_hotkey_6",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for hotkey nannan_hotkey_6 on server ip 86.38.182.2 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "nannan_hotkey_7",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for hotkey nannan_hotkey_7 on server ip 86.38.182.2 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "nannan_hotkey_8",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for hotkey nannan_hotkey_8 on server ip 86.38.182.2 die"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "nannan_hotkey_9",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for hotkey nannan_hotkey_9 on server ip 86.38.182.2 die"
     }
   ],
   "timeSleep": 30
