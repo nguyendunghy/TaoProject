@@ -21,14 +21,6 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "nannan_hotkey_3",
-      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner nannan_hotkey_3 die in ip: 135.181.63.197"
-    },
-    {
-      "command": "ps -ef|grep python",
-      "location": "/root/head-tail-llm-detection",
-      "operator": "NOT_CONTAIN",
       "checkedString": "nannan_hotkey_4",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Miner nannan_hotkey_4 die in ip: 135.181.63.197"
