@@ -13,25 +13,9 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_20",
-      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner for hotkey jackie_hotkey_20 on server ip 86.38.182.2 die"
-    },
-    {
-      "command": "ps -ef|grep python",
-      "location": "/root/head-tail-llm-detection",
-      "operator": "NOT_CONTAIN",
       "checkedString": "jackie_hotkey_22",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Miner for hotkey jackie_hotkey_22 on server ip 86.38.182.2 die"
-    },
-    {
-      "command": "ps -ef|grep python",
-      "location": "/root/head-tail-llm-detection",
-      "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_23",
-      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner for hotkey jackie_hotkey_23 on server ip 86.38.182.2 die"
     },
     {
       "command": "ps -ef|grep python",
@@ -48,22 +32,6 @@
       "checkedString": "jackie_hotkey_25",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Miner for hotkey jackie_hotkey_25 on server ip 86.38.182.2 die"
-    },
-    {
-      "command": "ps -ef|grep python",
-      "location": "/root/head-tail-llm-detection",
-      "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_26",
-      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner for hotkey jackie_hotkey_26 on server ip 86.38.182.2 die"
-    },
-    {
-      "command": "ps -ef|grep python",
-      "location": "/root/head-tail-llm-detection",
-      "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_27",
-      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
-      "message": "Miner for hotkey jackie_hotkey_27 on server ip 86.38.182.2 die"
     },
     {
       "command": "ps -ef|grep python",
