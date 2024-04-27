@@ -3,19 +3,19 @@
   "threadConfigs": [
     {
       "command": "ps -ef|grep python",
-      "location": "/root/TaoProject",
+      "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_24",
-      "logFilePath": "/root/llm-detection/jackie_hotkey_24.log",
-      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_24 ip:70.48.87.64 die"
+      "checkedString": "model_api_controller.py 8888",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Model server 8888 die in ip: 70.48.87.64"
     },
     {
       "command": "ps -ef|grep python",
-      "location": "/root/TaoProject",
+      "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "jackie_hotkey_24",
-      "logFilePath": "/root/llm-detection/jackie_hotkey_24.log",
-      "message": "Thread mining subnet:32 hotkey:jackie_hotkey_24 ip:70.48.87.64 die"
+      "checkedString": "model_api_controller.py 6006",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Model server 6006 die in ip: 70.48.87.64"
     }
   ],
   "timeSleep": 30
