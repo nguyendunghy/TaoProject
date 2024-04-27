@@ -5,13 +5,13 @@
 #max.register.price.4=0
 #max.register.price.6=0
 #max.register.price.26=0.3
-max.register.price.32=1
+max.register.price.32=0.3
 
 #subnetId seperator is comma
 register.subnetId=32
 #default, dungngoc
-register.coldkey=dungngoc
-register.hotkey=nannan_hotkey_6,nannan_hotkey_7,nannan_hotkey_8
+register.coldkey=default
+register.hotkey=jackie_hotkey_20,jackie_hotkey_23,jackie_hotkey_26,jackie_hotkey_27
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
