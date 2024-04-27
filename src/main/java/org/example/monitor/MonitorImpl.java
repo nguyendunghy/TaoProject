@@ -36,7 +36,12 @@ public class MonitorImpl implements Monitor {
 
     @Override
     public String getIpAddress() throws Exception {
-        return SystemUtils.getPublicIp();
+        try {
+            return SystemUtils.getPublicIp();
+        } catch (Exception e) {
+            log.error("error: ", e);
+        }
+        return "209.89.255.156";
     }
 
     @Override
@@ -71,7 +76,7 @@ public class MonitorImpl implements Monitor {
 
     @Override
     public String doAction(List<String> issueList) {
-        if(issueList == null || issueList.isEmpty()){
+        if (issueList == null || issueList.isEmpty()) {
             log.info("All good, no issue !");
             return "SUCCESS";
         }
@@ -92,7 +97,7 @@ public class MonitorImpl implements Monitor {
                 //Time sleep must be less than checking interval time in service ServerMonitorManager
                 String[] urls = PropertyUtils.getProperty("report.url").split(",");
                 String publicIp = getIpAddress();
-                ReportingApi.report(urls,publicIp);
+                ReportingApi.report(urls, publicIp);
 
                 Map<ThreadConfig, String> info = getInfo();
                 List<String> listIssue = findIssue(info);
