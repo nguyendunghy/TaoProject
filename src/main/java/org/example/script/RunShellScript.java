@@ -1,5 +1,6 @@
 package org.example.script;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.utils.PropertyUtils;
 
 import java.io.BufferedReader;
@@ -8,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class RunShellScript {
     public static String getPriceLinuxCommand(String scriptPath, String subnetId, String hotkey) throws Exception {
         ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, hotkey, folderOfScript());
@@ -132,7 +134,7 @@ public class RunShellScript {
         return path.substring(0, index);
     }
     public static void main(String[] args) {
-        System.out.println(runMonitorScript("ps -ef|grep java"));
+        log.info(runMonitorScript("ps -ef|grep java"));
     }
 
 }

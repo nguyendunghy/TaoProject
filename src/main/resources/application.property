@@ -18,7 +18,7 @@ get.price.thread.sleep=3000
 #project location
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
-
+135.181.63.197.project.location=/root/TaoProject
 
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
@@ -37,4 +37,4 @@ monitor.threads.channel.chat.id=@BittensorSubnetRegisterPrice
 monitor.get.info.command=ps -ef|grep python
 monitor.config.path=src/main/resources/monitor
 
-
+report.url=http://69.67.150.21:6868/monitor/report,http://103.219.170.221:6868/monitor/report

@@ -1,5 +1,6 @@
 package org.example.engine;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.script.RunShellScript;
 import org.example.telegram.TeleGramMessageSender;
 import org.example.utils.PropertyUtils;
@@ -11,6 +12,7 @@ import java.util.List;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+@Slf4j
 public class GetPriceEngine {
 
     private static Double REGISTER_PRICE_THRESHOLD = 10D;
@@ -58,7 +60,7 @@ public class GetPriceEngine {
                 String scriptOutput = RunShellScript.getPriceLinuxCommand(getRegisterPricePath, subnetId, hotkey);
                 currentPrice = StringUtils.extractPrice(scriptOutput);
                 String message = StringUtils.priceMessage(subnetId, currentPrice);
-                System.out.println(message);
+                log.info(message);
                 if (shouldSendMessage(currentPrice)) {
                     String channelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
                     TeleGramMessageSender.sendMessage(channelId, message);
