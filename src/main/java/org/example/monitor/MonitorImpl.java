@@ -35,8 +35,13 @@ public class MonitorImpl implements Monitor {
     }
 
     @Override
-    public String getIpAddress() throws Exception {
-        return SystemUtils.getPublicIp();
+    public String getIpAddress() {
+        try {
+            return SystemUtils.getPublicIp();
+        } catch (Exception e) {
+            log.error("error:",e);
+        }
+        return monitorConfig.getIp();
     }
 
     @Override
