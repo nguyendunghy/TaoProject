@@ -5,7 +5,7 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "model_api_controller.py 8888",
+      "checkedString": "api_model_controller.py 8888",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Model server 8888 die in ip: 70.48.87.64"
     },
@@ -13,7 +13,7 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "model_api_controller.py 6006",
+      "checkedString": "api_model_controller.py 6006",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Model server 6006 die in ip: 70.48.87.64"
     }
