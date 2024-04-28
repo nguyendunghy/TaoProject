@@ -11,7 +11,7 @@ max.register.price.32=0.6
 register.subnetId=32
 #default, dungngoc
 register.coldkey=default
-register.hotkey=jackie_hotkey_20,jackie_hotkey_23,jackie_hotkey_26,jackie_hotkey_27
+register.hotkey=jackie_hotkey_23,jackie_hotkey_26,jackie_hotkey_27
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
