@@ -5,7 +5,7 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "model_api_controller.py 6006",
+      "checkedString": "api_model_controller.py 6006",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Model api controller port 6006 at ip:174.95.185.181 die"
     },
@@ -13,7 +13,7 @@
       "command": "ps -ef|grep python",
       "location": "/root/head-tail-llm-detection",
       "operator": "NOT_CONTAIN",
-      "checkedString": "model_api_controller.py 8888",
+      "checkedString": "api_model_controller.py 8888",
       "logFilePath": "/root/head-tail-llm-detection/model_api.log",
       "message": "Model api controller port 8888 at 174.95.185.181 die"
     }
