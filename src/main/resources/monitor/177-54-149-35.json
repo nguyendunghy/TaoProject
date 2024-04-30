@@ -1,0 +1,38 @@
+{
+  "ip": "177.54.149.35",
+  "threadConfigs": [
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "restful_api.py 8888",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Head tail indexing service die at ip:177.54.149.35"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "restful_api.py 9000",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Cache service die at ip:177.54.149.35"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_20",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for jackie_hotkey_20 die at ip:177.54.149.35"
+    },
+    {
+      "command": "ps -ef|grep python",
+      "location": "/root/head-tail-llm-detection",
+      "operator": "NOT_CONTAIN",
+      "checkedString": "jackie_hotkey_23",
+      "logFilePath": "/root/head-tail-llm-detection/model_api.log",
+      "message": "Miner for jackie_hotkey_23 die at ip:177.54.149.35"
+    }
+  ],
+  "timeSleep": 30
+}
