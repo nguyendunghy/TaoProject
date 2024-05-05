@@ -9,7 +9,7 @@ cd ~/.bittensor/wallets/default
 spawn btcli subnet register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
 expect {
     "Enter subtensor network*" {
-        send "finney\r"
+        send "test\r"
     }
 }
 

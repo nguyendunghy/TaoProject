@@ -5,13 +5,13 @@
 #max.register.price.4=0
 #max.register.price.6=0
 #max.register.price.26=0.3
-max.register.price.32=0.8
+max.register.price.87=0.001
 
 #subnetId seperator is comma
-register.subnetId=32
+register.subnetId=87
 #default, dungngoc
 register.coldkey=default
-register.hotkey=jackie_hotkey_20,jackie_hotkey_22,jackie_hotkey_26,jackie_hotkey_27
+register.hotkey=jackie_hotkey_6,jackie_hotkey_7,jackie_hotkey_8,jackie_hotkey_9,jackie_hotkey_11,jackie_hotkey_12,jackie_hotkey_13,jackie_hotkey_14,jackie_hotkey_15,jackie_hotkey_16,jackie_hotkey_17,jackie_hotkey_18,jackie_hotkey_19
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
