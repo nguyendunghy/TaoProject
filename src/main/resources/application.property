@@ -9,9 +9,9 @@ max.register.price.10=3
 
 #subnetId seperator is comma
 register.subnetId=10
-#default, dungngoc, Wolf_Farmers
+#default, dungngoc, default
 register.coldkey=Wolf_Farmers
-register.hotkey=hk1,hk2,hk3,hk4,hk5,hk6,hk7,hk8,hk9,hk10
+register.hotkey=nannan_hotkey_1,nannan_hotkey_2,nannan_hotkey_3,nannan_hotkey_4,nannan_hotkey_5,nannan_hotkey_6,nannan_hotkey_7,nannan_hotkey_8
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
