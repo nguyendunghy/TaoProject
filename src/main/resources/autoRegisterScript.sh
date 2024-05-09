@@ -7,7 +7,9 @@ set REGISTER_PRICE_THRESHOLD [lindex $argv 1]
 
 
 cd ~/.bittensor/wallets/default
-spawn btcli subnet register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
+#spawn btcli subnet register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
+spawn btcli s register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
+
 expect {
     "Enter subtensor network*" {
         send "finney\r"
