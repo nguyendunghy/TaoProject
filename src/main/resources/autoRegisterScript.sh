@@ -28,16 +28,6 @@ expect {
 
 
 expect {
-    "Enter password*" {
-        send "$password\r"
-    }
-     timeout {
-        send_user "Expected password not found within timeout period.\n"
-        exit 1  
-    }
-}
-
-expect {
     -re {Recycle τ([0-9.]+) to register on subnet:([0-9]+)\?} {
             set amount $expect_out(1,string)
             set amountFloat [expr {double($amount)}]
