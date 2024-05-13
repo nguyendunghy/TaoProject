@@ -1,0 +1,1 @@
+{"accountId": "0xa63957bf7e541dcfa52bbf8102084314c11b6fe5790ca8999245011906fcad63", "publicKey": "0xa63957bf7e541dcfa52bbf8102084314c11b6fe5790ca8999245011906fcad63", "secretPhrase": null, "secretSeed": null, "ss58Address": "5FpeqhJ3hiJ5f4w4f82p1rptbB8kijekMJDsdgKW28hPa7gZ"}
