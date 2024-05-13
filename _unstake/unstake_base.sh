@@ -4,6 +4,7 @@ set timeout 60
 set wallet_path ~/.bittensor/wallets/
 set wallet_name [lindex $argv 0]
 set hotkey [lindex $argv 1]
+set password [lindex $argv 2]
 
 spawn btcli stake remove
 expect {
@@ -33,7 +34,7 @@ expect {
 
 expect {
     "Enter password *" {
-        send "Iltmt@e1\r"
+        send "$password\r"
     }
 }
 
