@@ -11,7 +11,7 @@ max.register.price.10=2
 register.subnetId=10
 #default, dungngoc, default
 register.coldkey=Wolf_Farmers
-register.hotkey=hk11,hk13,hk14,hk15
+register.hotkey=hk18,hk19,hk20
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
@@ -26,6 +26,7 @@ get.price.thread.sleep=3000
 14.177.224.124.project.location=/Users/nannan/IdeaProjects/TaoProject/
 14.248.132.24.project.location=/Users/nannan/IdeaProjects/TaoProject/
 106.150.252.89.project.location=/root/jackie_dir/TaoProject/
+91.242.215.209.project.location=/home/ubuntu/.jackie/TaoProject/
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
 script.get.register.price.path=src/main/resources/runGetRegisterPrice.sh
