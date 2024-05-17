@@ -28,6 +28,7 @@ get.price.thread.sleep=3000
 106.150.252.89.project.location=/root/jackie_dir/TaoProject/
 1.54.7.17.project.location=/Users/nannan/IdeaProjects/TaoProject/
 91.242.215.209.project.location=/home/ubuntu/.jackie/subnet_33/TaoProject/
+108.53.57.130.project.location=/root/TaoProject/
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
 script.get.register.price.path=src/main/resources/runGetRegisterPrice.sh
