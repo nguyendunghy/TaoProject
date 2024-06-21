@@ -18,7 +18,7 @@ get.price.hotkey=jackie_hotkey_22
 get.price.thread.sleep=3000
 
 #project location
-192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
+113.22.85.80.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
 45.250.255.72.project.location=/home/ubuntu/TaoProject/
 135.181.63.197.project.location=/root/TaoProject/
