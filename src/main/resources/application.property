@@ -11,14 +11,14 @@ max.register.price.10=2
 register.subnetId=10
 #default, dungngoc, default
 register.coldkey=Wolf_Farmers
-register.hotkey=hk2
+register.hotkey=hk1
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
 get.price.thread.sleep=3000
 
 #project location
-1.53.44.109.project.location=/Users/nannan/IdeaProjects/TaoProject/
+116.96.46.248.project.location=/Users/nannan/IdeaProjects/TaoProject/
 113.23.6.124.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
 45.250.255.72.project.location=/home/ubuntu/TaoProject/
