@@ -5,20 +5,20 @@
 #max.register.price.4=0
 #max.register.price.6=0
 #max.register.price.26=0.3
-max.register.price.32=0.9
+max.register.price.6=0.5
 
 #subnetId seperator is comma
 register.subnetId=32
 #cold key: default, dungngoc
-register.coldkey=default
-register.hotkey=jackie_hotkey_23,jackie_hotkey_22
+register.coldkey=Wolf_Farmers
+register.hotkey=hk4,hk5,hk6,hk7,hk8,hk9,hk10
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
 get.price.thread.sleep=3000
 
 #project location
-192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
+116.96.46.248.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
 
-set password "Iltmt@e1"
+set password "xuanhuy@123"
 set timeout 90
 set REGISTER_PRICE_THRESHOLD [lindex $argv 1]
 
