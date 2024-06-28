@@ -25,10 +25,10 @@ public class MonitorImpl implements Monitor {
     public MonitorImpl() {
         try {
             initMonitorConfigFromFile();
-            if (monitorConfig.getIp() == null || !monitorConfig.getIp().equals(getIpAddress())) {
-                log.info("Ip address not correct " + monitorConfig.getIp() + ":" + getIpAddress());
-                System.exit(1);
-            }
+//            if (monitorConfig.getIp() == null || !monitorConfig.getIp().equals(getIpAddress())) {
+//                log.info("Ip address not correct " + monitorConfig.getIp() + ":" + getIpAddress());
+//                System.exit(1);
+//            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -113,7 +113,7 @@ public class MonitorImpl implements Monitor {
 
 
     private MonitorConfig initMonitorConfigFromFile() throws Exception {
-        String ip = getIpAddress();
+        String ip = "8-8-8-8";
         String fileName = String.join("-", ip.split("\\.")) + ".json";
         String directory = Constants.PROJECT_LOCATION + PropertyUtils.getProperty("monitor.config.path");
         String fullFilePath = directory + "/" + fileName;
