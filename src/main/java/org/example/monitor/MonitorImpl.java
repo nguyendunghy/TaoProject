@@ -37,11 +37,16 @@ public class MonitorImpl implements Monitor {
     @Override
     public String getIpAddress() {
         try {
-            return SystemUtils.getPublicIp();
+            if(SystemUtils.IP == null){
+                SystemUtils.IP = SystemUtils.getPublicIp();
+            }
+
+            return SystemUtils.IP;
         } catch (Exception e) {
             log.error("error: ", e);
         }
-        return monitorConfig.getIp();
+        System.exit(1);
+        return null;
     }
 
     @Override

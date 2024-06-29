@@ -11,6 +11,7 @@ import java.net.URL;
 
 @Slf4j
 public class SystemUtils {
+    public static String IP = null;
 
     public static String getIpAddress() throws Exception {
         InetAddress inetAddress = InetAddress.getLocalHost();
