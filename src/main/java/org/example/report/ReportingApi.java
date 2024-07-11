@@ -5,13 +5,17 @@ import org.example.entity.ReportEntity;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 public class ReportingApi {
     public static void report(String url, String ip) {
         try {
-            RestTemplate restTemplate = new RestTemplate();
+            SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
+            factory.setConnectTimeout(5000);
+            factory.setReadTimeout(5000);
+            RestTemplate restTemplate = new RestTemplate(factory);
             ReportEntity body = new ReportEntity(ip);
 
             // Setting up the headers
