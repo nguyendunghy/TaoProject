@@ -20,7 +20,7 @@ get.price.thread.sleep=3000
 #project location
 1.54.176.29.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
-103.219.170.99.project=/home/ubuntu/register/sn06/TaoProject/
+103.219.170.99.project.location=/home/ubuntu/register/sn06/TaoProject/
 
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
