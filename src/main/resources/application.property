@@ -5,10 +5,10 @@
 #max.register.price.4=0
 #max.register.price.6=0
 #max.register.price.26=0.3
-max.register.price.6=0.3
+max.register.price.13=0.4
 
 #subnetId seperator is comma
-register.subnetId=6
+register.subnetId=13
 #cold key: default, dungngoc, Wolf_Farmers
 register.coldkey=new_wolf_farmer
 register.hotkey=hk1,hk2,hk3
