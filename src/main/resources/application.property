@@ -9,8 +9,8 @@ max.register.price.8=6
 
 #subnetId seperator is comma
 register.subnetId=8
-#cold key: default, dungngoc, Wolf_Farmers
-register.coldkey=new_wolf_farmer
+#cold key: default, dungngoc, Wolf_Farmers, WGang3
+register.coldkey=WGang3
 register.hotkey=hk1
 
 get.price.subnetId=26,32
@@ -20,7 +20,8 @@ get.price.thread.sleep=3000
 #project location
 1.54.176.29.project.location=/Users/nannan/IdeaProjects/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
-103.219.170.99.project.location=/home/ubuntu/register/sn06/TaoProject/
+103.219.170.99.project.location=/home/ubuntu/register/sn08/TaoProject/
+
 
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
