@@ -5,13 +5,13 @@
 #max.register.price.4=0
 #max.register.price.6=0
 #max.register.price.26=0.3
-max.register.price.10=0.3
+max.register.price.10=0.5
 
 #subnetId seperator is comma
 register.subnetId=10
 #default, dungngoc, Wolf_Farmers,new_wolf_farmer,new_wolf_gang_2
 register.coldkey=new_wolf_gang_2
-register.hotkey=hk1,hk2
+register.hotkey=hk3,hk4,hk5
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
