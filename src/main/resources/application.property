@@ -9,8 +9,8 @@ max.register.price.10=0.3
 
 #subnetId seperator is comma
 register.subnetId=10
-#default, dungngoc, Wolf_Farmers,new_wolf_farmer,new_wolf_gang
-register.coldkey=new_wolf_gang
+#default, dungngoc, Wolf_Farmers,new_wolf_farmer,new_wolf_gang_2
+register.coldkey=new_wolf_gang_2
 register.hotkey=hk1,hk2
 
 get.price.subnetId=26,32
