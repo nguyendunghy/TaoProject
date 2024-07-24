@@ -1,12 +1,12 @@
 
 
-max.register.price.30=0.5
+max.register.price.30=0.3
 
 #subnetId seperator is comma
 register.subnetId=30
-#default, dungngoc, Wolf_Farmers
-register.coldkey=Wolf_Farmers
-register.hotkey=hk29,hk30,hk31
+#dolphin,lion,hawk
+register.coldkey=dolphin
+register.hotkey=hk1,hk2,hk3,hk4,hk5
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
@@ -15,7 +15,7 @@ get.price.thread.sleep=3000
 #project location
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 1.54.176.29.project.location=/Users/nannan/IdeaProjects/TaoProject/
-103.219.170.99.project.location=/home/ubuntu/register/TaoProject/
+103.219.170.99.project.location=/home/ubuntu/register/sn30/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
 45.250.255.72.project.location=/home/ubuntu/TaoProject/
 135.181.63.197.project.location=/root/TaoProject/
