@@ -5,7 +5,7 @@ max.register.price.30=0.3
 #subnetId seperator is comma
 register.subnetId=30
 #dolphin,lion,hawk
-register.coldkey=dolphin
+register.coldkey=lion
 register.hotkey=hk1,hk2,hk3,hk4,hk5
 
 get.price.subnetId=26,32
