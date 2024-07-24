@@ -11,7 +11,7 @@ max.register.price.10=0.34
 register.subnetId=10
 #default, dungngoc, Wolf_Farmers,new_wolf_farmer,new_wolf_gang_2,dolphin,lion,hawk
 register.coldkey=hawk
-register.hotkey=hk8,hk9
+register.hotkey=hk10
 
 get.price.subnetId=26,32
 get.price.hotkey=jackie_hotkey_22
