@@ -13,7 +13,7 @@ public class RunShellScript {
     }
 
     public static String register(String scriptPath, String subnetId, String threshold, String hotkey, String coldKey,String password) throws Exception{
-        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, coldKey, password, folderOfScript());
+        ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptPath, subnetId, threshold, hotkey, coldKey, folderOfScript(),password);
         return runScript(processBuilder);
     }
 
