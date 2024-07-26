@@ -11,6 +11,7 @@ register.hotkey=hk1,hk2,hk3,hk4,hk5
 
 
 #project location
+54.167.54.25.project.location=/home/ubuntu/register/sn30/TaoProject/
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 1.54.176.29.project.location=/Users/nannan/IdeaProjects/TaoProject/
 103.219.170.99.project.location=/home/ubuntu/register/sn30/TaoProject/
