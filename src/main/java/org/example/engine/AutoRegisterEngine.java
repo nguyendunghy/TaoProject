@@ -16,6 +16,8 @@ public class AutoRegisterEngine {
 
     private List<String> registeredHotKeyList = new ArrayList<>();
 
+    private List<Long> timeRegisterKeyList = new ArrayList<>();
+
     public AutoRegisterEngine(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -49,6 +51,13 @@ public class AutoRegisterEngine {
                     System.out.println("No hotkey to register!!!");
                     break;
                 }
+
+                if(!checkReachingMaxRegisterKeyPerRound()){
+                    System.out.println("Reaching max number of register key!");
+                    Thread.sleep(1000);
+                    continue;
+                }
+
                 System.out.println("start register coldKey: " + coldKey + ", hotKey: " + hotkey);
 
                 Double maxRegisterPrice = MAX_REGISTER_PRICE_MAP.get(subnetId);
@@ -57,6 +66,7 @@ public class AutoRegisterEngine {
                 System.out.println(output);
                 if (output.contains("Registered") && !output.contains("Already Registered")) {
                     registeredHotKeyList.add(hotkey);
+                    timeRegisterKeyList.add(System.currentTimeMillis());
                     String price = extractPrice(output);
                     String telegramChannelId = PropertyUtils.getProperty("subnet.register.price.channel.chat.id");
                     TeleGramMessageSender.sendMessage(telegramChannelId, "Registered successfully subnet:" + subnetId
@@ -77,6 +87,23 @@ public class AutoRegisterEngine {
 
     private String getPassword(){
         return PropertyUtils.getProperty("register.coldkey.password");
+    }
+
+    private int getMaxKeysRegisterPerRound(){
+        return Integer.parseInt(PropertyUtils.getProperty("max.key.register.per.round"));
+    }
+
+    public  boolean checkReachingMaxRegisterKeyPerRound(){
+        Long current = System.currentTimeMillis();
+        int count = 0;
+        for(int i=timeRegisterKeyList.size()-1; i>=0 ;i--){
+            Long timeRegister = timeRegisterKeyList.get(i);
+            if(current - timeRegister < 60 * 60 * 1000){
+                count++;
+            }
+        }
+
+        return getMaxKeysRegisterPerRound() > count;
     }
 
     private String getHotKey(){
