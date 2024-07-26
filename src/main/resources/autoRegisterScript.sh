@@ -1,12 +1,14 @@
 #!/usr/bin/expect -f
 
-set password "xuanhuy@123"
+
+set password [lindex $argv 4]
 set timeout 180
 set REGISTER_PRICE_THRESHOLD [lindex $argv 1]
 
 
-cd ~/.bittensor/wallets/default
-spawn btcli subnet register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
+#cd ~/.bittensor/wallets/new_wolf_gang_2
+#spawn btcli subnet register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
+spawn btcli s register --netuid [lindex $argv 0] --wallet.name [lindex $argv 2] --wallet.hotkey [lindex $argv 3]
 
 expect {
     "Enter subtensor network*" {
@@ -31,7 +33,7 @@ expect {
     }
      timeout {
         send_user "Expected password not found within timeout period.\n"
-        exit 1  
+        exit 1
     }
 }
 

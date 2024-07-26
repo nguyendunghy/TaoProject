@@ -1,25 +1,19 @@
-
-#max.register.price.1=0
-#max.register.price.2=0
-#max.register.price.3=0
-#max.register.price.4=0
-#max.register.price.6=0
-#max.register.price.26=0.3
-max.register.price.10=2
+max.register.price.10=0.3
 
 #subnetId seperator is comma
 register.subnetId=10
-#default, dungngoc, default
-register.coldkey=Wolf_Farmers
-register.hotkey=hk1
+#dolphin,lion,hawk,tiger,subnet35,subnet44
+register.coldkey=tiger
+register.coldkey.password=wolf$2024
+register.hotkey=hk2,hk3,hk4,hk5,hk6,hk7,hk8,hk9,hk10
 
-get.price.subnetId=26,32
-get.price.hotkey=jackie_hotkey_22
-get.price.thread.sleep=3000
 
 #project location
+103.252.0.171.project.location=/home/wolf/register/sn10/TaoProject/
+54.167.54.25.project.location=/home/ubuntu/TaoProject/
+192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 116.96.46.248.project.location=/Users/nannan/IdeaProjects/TaoProject/
-113.23.6.124.project.location=/Users/nannan/IdeaProjects/TaoProject/
+103.219.170.99.project.location=/home/ubuntu/register/sn10/TaoProject/
 127.0.1.1.project.location=/home/fsuser/TaoProject/
 45.250.255.72.project.location=/home/ubuntu/TaoProject/
 135.181.63.197.project.location=/root/TaoProject/
@@ -27,7 +21,6 @@ get.price.thread.sleep=3000
 14.177.224.124.project.location=/Users/nannan/IdeaProjects/TaoProject/
 14.248.132.24.project.location=/Users/nannan/IdeaProjects/TaoProject/
 106.150.252.89.project.location=/root/jackie_dir/TaoProject/
-91.242.215.209.project.location=/home/ubuntu/.jackie/TaoProject/
 #script path local
 script.register.path=src/main/resources/runAutoRegister.sh
 script.get.register.price.path=src/main/resources/runGetRegisterPrice.sh
