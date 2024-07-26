@@ -1,14 +1,15 @@
-max.register.price.10=0.32
+max.register.price.35=0.2
 
 #subnetId seperator is comma
-register.subnetId=10
-#dolphin,lion,hawk,tiger
-register.coldkey=tiger
-register.hotkey=hk1
+register.subnetId=35
+#dolphin,lion,hawk,tiger,subnet35
+register.coldkey=subnet35
+register.coldkey.password=wolf#2024
+register.hotkey=hk1,hk2,hk3,hk4,hk5,hk6,hk7,hk8,hk9,hk10
 
 
 #project location
-103.252.0.171.project.location=/home/wolf/register/sn10/TaoProject/
+103.252.0.171.project.location=/home/wolf/register/sn35/TaoProject/
 54.167.54.25.project.location=/home/ubuntu/TaoProject/
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 116.96.46.248.project.location=/Users/nannan/IdeaProjects/TaoProject/
