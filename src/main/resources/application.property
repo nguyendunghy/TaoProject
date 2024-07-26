@@ -1,16 +1,14 @@
 
-
 max.register.price.30=0.3
 
 #subnetId seperator is comma
 register.subnetId=30
+
 #dolphin,lion,hawk
-register.coldkey=lion
+register.coldkey=hawk
 register.hotkey=hk1,hk2,hk3,hk4,hk5
 
-get.price.subnetId=26,32
-get.price.hotkey=jackie_hotkey_22
-get.price.thread.sleep=3000
+
 
 #project location
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
