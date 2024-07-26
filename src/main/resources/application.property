@@ -5,8 +5,8 @@ max.register.price.30=0.3
 register.subnetId=30
 
 #dolphin,lion,hawk
-register.coldkey=hawk
-register.hotkey=hk1,hk2,hk3,hk4,hk5
+register.coldkey=dolphin
+register.hotkey=hk4,hk5,hk6
 
 
 
