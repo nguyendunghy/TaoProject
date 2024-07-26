@@ -1,5 +1,7 @@
 package org.example.utils;
 
+import org.apache.commons.math3.util.Combinations;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
@@ -34,6 +36,20 @@ public class SystemUtils {
         }
     }
 
+    public static Combinations getCombination(int r,int n) {
+        Combinations combinations = new Combinations(n, r);
+
+        int size = 0;
+        for (int[] combination : combinations) {
+            size++;
+            for (int elem : combination) {
+                System.out.print(elem + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("size = " + size);
+        return combinations;
+    }
     public static void genIndex(){
         HashSet<String> set = new HashSet<>();
         List<List<Integer>> combination = new ArrayList<>();
@@ -81,6 +97,7 @@ public class SystemUtils {
     }
 
     public static void main(String[] args) throws Exception {
-        genIndex();
+//        genIndex();
+        getCombination(3,6);
     }
 }
