@@ -1,17 +1,16 @@
-
-
-max.register.price.39=0.2
-
+max.register.price.39=0.05
+max.key.register.per.round=3
 #subnetId seperator is comma
 register.subnetId=39
-#default, dungngoc, Wolf_Farmers,new_wolf_farmer,new_wolf_gang_2,dolphin,lion,hawk
-register.coldkey=dolphin
+#dolphin,lion,hawk,tiger,panther
+register.coldkey=subnet39
+register.coldkey.password=wolf#2024
 register.hotkey=hk1,hk2,hk3,hk4,hk5,hk6,hk7,hk8,hk9,hk10
 
 
-
 #project location
-54.167.54.25.project.location=/home/ubuntu/register/sn39/TaoProject/
+103.252.0.171.project.location=/home/wolf/register/sn39/TaoProject/
+54.167.54.25.project.location=/home/ubuntu/TaoProject/
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 116.96.46.248.project.location=/Users/nannan/IdeaProjects/TaoProject/
 103.219.170.99.project.location=/home/ubuntu/register/sn10/TaoProject/
