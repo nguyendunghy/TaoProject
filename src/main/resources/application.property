@@ -5,12 +5,13 @@ max.register.price.30=0.3
 register.subnetId=30
 
 #dolphin,lion,hawk
-register.coldkey=dolphin
-register.hotkey=hk4,hk5,hk6
+register.coldkey=hawk
+register.hotkey=hk1,hk2,hk6
 
 
 
 #project location
+103.252.0.171.project.location=/home/wolf/register/sn30/TaoProject/
 54.167.54.25.project.location=/home/ubuntu/register/sn30/TaoProject/
 192.168.102.3.project.location=/Users/nannan/IdeaProjects/TaoProject/
 1.54.176.29.project.location=/Users/nannan/IdeaProjects/TaoProject/
