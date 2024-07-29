@@ -4,7 +4,7 @@ max.key.register.per.round=3
 register.subnetId=42
 #dolphin,lion,hawk,tiger,panther,subnet42
 register.coldkey=subnet42
-register.coldkey.password=wolf@2024
+register.coldkey.password=wolf$2024
 register.hotkey=hk1,hk2,hk3,hk4,hk5,hk6,hk7,hk8,hk9,hk10
 
 
