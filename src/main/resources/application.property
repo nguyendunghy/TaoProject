@@ -3,9 +3,9 @@ max.key.register.per.round=3
 #subnetId seperator is comma
 register.subnetId=10
 #dolphin,lion,hawk,tiger,panther
-register.coldkey=new_wolf_farmer
-register.coldkey.password=wolf#2024
-register.hotkey=hk2,hk7,hk8
+register.coldkey=panther
+register.coldkey.password=wolf*2024
+register.hotkey=hk8
 
 
 #project location
