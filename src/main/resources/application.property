@@ -5,7 +5,7 @@ register.subnetId=42
 #dolphin,lion,hawk,tiger,panther,subnet42
 register.coldkey=subnet42
 register.coldkey.password=wolf#2024
-register.hotkey=hk11,hk12,hk13,hk14,hk15,hk16,hk17,hk18,hk19,hk20
+register.hotkey=hk21,hk22,hk23,hk24,hk25,hk26,hk27,hk28,hk29,hk30
 
 
 #project location
