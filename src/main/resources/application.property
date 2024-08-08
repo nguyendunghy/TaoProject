@@ -1,11 +1,11 @@
-max.register.price.10=0.4
+max.register.price.10=0.3
 max.key.register.per.round=3
 #subnetId seperator is comma
 register.subnetId=10
 #dolphin,lion,hawk,tiger,panther
 register.coldkey=panther
 register.coldkey.password=wolf*2024
-register.hotkey=hk8
+register.hotkey=hk1
 
 
 #project location
